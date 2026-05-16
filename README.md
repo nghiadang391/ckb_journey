@@ -1,10 +1,10 @@
-# 🧱 CKB Builder's Journey
+# CKB Builder's Journey
 
 > A developer log and learning repository for the **[Nervos CKB Builders' Track](https://docs.google.com/document/d/1aFHXU1ZL1MyIbBAIVRjG6stqdWwPUPyHV90O1QNwY-M/)** — documenting my journey from embedded engineer to blockchain developer.
 
 ---
 
-## 📍 Track Progress
+## Track Progress
 
 | Level | Status | Topics |
 |---|---|---|
@@ -15,7 +15,7 @@
 
 ---
 
-## 🛠️ Development Environment
+## Development Environment
 
 | Tool | Version | Purpose |
 |---|---|---|
@@ -45,7 +45,7 @@ The local devnet runs at: `http://127.0.0.1:28114`
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 CKB/
@@ -63,17 +63,14 @@ CKB/
 
 ---
 
-## 📓 Weekly Developer Logs
-
-## 📓 Weekly Developer Logs
+## Weekly Developer Logs
 
 Weekly logs are maintained in the [`weekly-logs/`](./weekly-logs/) directory,
 published every week as required by the CKB Builders' Track.
 
-
 ---
 
-## 📚 Key Resources
+## Key Resources
 
 | Resource | Link |
 |---|---|
@@ -86,7 +83,7 @@ published every week as required by the CKB Builders' Track.
 
 ---
 
-## 💡 Key Concepts (TL;DR for Embedded Engineers)
+## Key Concepts (TL;DR for Embedded Engineers)
 
 > Full notes in [`blockchain_intro.md`](./blockchain_intro.md)
 
@@ -98,7 +95,7 @@ published every week as required by the CKB Builders' Track.
 
 ---
 
-## 📬 Contact & Programme
+## Contact & Programme
 
 - **Programme Director:** Neon
 - **Funding:** [Spark Programme](https://ckbgrants.com/) / [CKB Community Fund DAO](https://dao.ckb.community/)
