@@ -8,10 +8,10 @@
 
 | Level | Status | Topics |
 |---|---|---|
-| **Intro** | ✅ Done | CKB concepts, OffCKB setup, CKB Academy Lessons 1 & 2 |
-| **Beginner** | 🔄 In Progress | Transfer CKB, Store Data on Cell, Fungible Tokens, Simple Lock |
-| **Intermediate** | ⏳ Pending | Script dev course, sUDT, Nervos DAO, Spore/DOBs |
-| **Advanced** | ⏳ Pending | SSRI protocol, RGB++, xUDT, iCKB |
+| **Intro** | Done | CKB concepts, OffCKB setup, CKB Academy Lessons 1 & 2 |
+| **Beginner** | In Progress | Transfer CKB, Store Data on Cell, Fungible Tokens, Simple Lock |
+| **Intermediate** | Pending | Script dev course, sUDT, Nervos DAO, Spore/DOBs |
+| **Advanced** | Pending | SSRI protocol, RGB++, xUDT, iCKB |
 
 ---
 
