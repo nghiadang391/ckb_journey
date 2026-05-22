@@ -6,11 +6,10 @@
 ### Courses Completed
 
 - Below is what I have learned this week:
-  - **CKB Theoretical Knowledge**:
-    - Learn about blockchain in general (I do not have background in block so It took a while)
-    - Learn about passkey, asymetric cryptography (cryptography in general), how does it work, how to create a wallet.
-    - Get arount with CKB, RISC-V, cell, mempool
-    - Understand the differences between CKB, Bitcoin and ETH
+  - Learn about blockchain in general (I do not have background in block so It took a while)
+  - Learn about passkey, asymetric cryptography (cryptography in general), how does it work, how to create a wallet.
+  - Get arount with CKB, RISC-V, cell, mempool
+  - Understand the differences between CKB, Bitcoin and ETH
 
 ### Key Learnings
 
