@@ -2,3 +2,6 @@ node_modules/
 dist/
 .parcel-cache/
 .DS_Store
+
+# Private AI learning context — not for version control
+Developer_Guidelines.md

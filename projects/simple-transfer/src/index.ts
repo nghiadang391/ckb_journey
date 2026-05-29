@@ -34,8 +34,11 @@ const DEVNET_SCRIPTS: Record<string, ScriptInfo> = {
   [KnownScript.NervosDao]: systemScripts.devnet.dao!.script as ScriptInfo,
 };
 
-// Connect to the public Testnet (Pudge)
-const client = new ccc.ClientPublicTestnet();
+// Connect to the local devnet node
+const client = new ccc.ClientPublicTestnet({
+  url: "http://localhost:28114",
+  scripts: DEVNET_SCRIPTS as any,
+});
 
 // Helper for shannon conversion
 function shannonsToCKB(shannons: bigint): string {
@@ -158,6 +161,8 @@ async function main() {
   console.log();
   console.log("[SUCCESS] Success! You just executed a bare-metal state transition on CKB!");
   separator();
+  
+  process.exit(0);
 }
 
 main().catch((err) => {

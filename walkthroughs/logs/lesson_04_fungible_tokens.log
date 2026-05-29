@@ -1,0 +1,73 @@
+
+> fungible-tokens@1.0.0 start
+> tsx src/index.ts
+
+================================================================================
+=== STARTING LESSON 4: Fungible Tokens (xUDT Core & Brand Metadata) ===
+================================================================================
+[INFO] Public Testnet is online! Current block height: 21249825
+
+[INFO] Checking Sender/Receiver native wallet balances...
+   [Sender]   Native CKB: 178,668 CKB
+   [Receiver] Native CKB: 1,897 CKB
+
+[INFO] Initializing cryptographical signer...
+   xUDT Type Script Args: 0x0abf028eb7f3927ac1ee9761fb650b60f16ea4c25e6a076db1cd94eff954b41300000000
+
+================================================================================
+=== [PART 1] CORE xUDT OPERATIONS: Issuance, Query, and Transfer ===
+================================================================================
+[INFO] Minting 1,000,000 custom tokens to Sender...
+[INFO] Signing and broadcasting Token Minting transaction...
+[TX] Mint Transaction Hash: 0xcd4429a6b47c46952277312dde12bac9ea26b31da40e11606fd3ea131db0a469
+   Waiting for mint transaction to commit (approx. 5-10s)...
+   Polling status... (Attempt 1/20)   Polling status... (Attempt 2/20)   Polling status... (Attempt 3/20)   Polling status... (Attempt 4/20)   Polling status... (Attempt 5/20)   Polling status... (Attempt 6/20)   Polling status... (Attempt 7/20)   Polling status... (Attempt 8/20)   Polling status... (Attempt 9/20)   Polling status... (Attempt 10/20)   Polling status... (Attempt 11/20)   Polling status... (Attempt 12/20)
+[SUCCESS] Mint transaction successfully committed!
+
+[INFO] Scanning ledger for live xUDT token cells...
+   [Sender] Token Balance: 5,500,000 tokens
+
+[INFO] Transferring 250,000 tokens to Receiver...
+   Generating change cell returning 1,750,000 tokens to Sender...
+[INFO] Signing and broadcasting Transfer transaction...
+[TX] Transfer Transaction Hash: 0x9ebf8ccb96f54692ad5a3015f00f452b89d44c329c419963d8761bae30591e1b
+   Waiting for transfer transaction to commit (approx. 5-10s)...
+   Polling status... (Attempt 1/20)   Polling status... (Attempt 2/20)   Polling status... (Attempt 3/20)   Polling status... (Attempt 4/20)   Polling status... (Attempt 5/20)   Polling status... (Attempt 6/20)   Polling status... (Attempt 7/20)   Polling status... (Attempt 8/20)   Polling status... (Attempt 9/20)   Polling status... (Attempt 10/20)   Polling status... (Attempt 11/20)   Polling status... (Attempt 12/20)   Polling status... (Attempt 13/20)   Polling status... (Attempt 14/20)   Polling status... (Attempt 15/20)   Polling status... (Attempt 16/20)   Polling status... (Attempt 17/20)
+[SUCCESS] Transfer transaction committed!
+
+=== Post-Transfer Token Ledgers ===
+   - [Sender]   Balance: 5,250,000 tokens
+   - [Receiver] Balance: 750,000 tokens
+
+================================================================================
+=== [PART 2] TOKEN BRANDING: Generating On-Chain Token Metadata Cell ===
+================================================================================
+[INFO] Packaging metadata parameters:
+   - Name:      "Ngoc's Extensible Token"
+   - Symbol:    "xNGOCVO"
+   - Decimals:  8
+   Packed Hex representation: 0x0807784e474f43564f174e676f63277320457874656e7369626c6520546f6b656e
+
+[INFO] Allocating Metadata Cell...
+[INFO] Broadcasting Metadata Registration...
+[TX] Metadata Transaction Hash: 0x2d276b45ea82c6ce0afe2c121ecae07e16cfe19e9b40c6cf4cebe6c4e577d460
+   Waiting for block inclusion...
+   Polling status... (Attempt 1/20)   Polling status... (Attempt 2/20)   Polling status... (Attempt 3/20)   Polling status... (Attempt 4/20)   Polling status... (Attempt 5/20)   Polling status... (Attempt 6/20)
+[SUCCESS] Metadata successfully written on-chain!
+
+[INFO] Querying live Metadata Cell from the ledger...
+   Fetched Raw Hex from chain: 0x0807784e474f43564f174e676f63277320457874656e7369626c6520546f6b656e
+[INFO] Unpacking and parsing binary fields...
+
+================================================================================
+=== ON-CHAIN BRANDED TOKEN DASHBOARD ===
+================================================================================
+   Token Name:   Ngoc's Extensible Token
+   Token Symbol: xNGOCVO
+   Decimals:     8
+   Description:  My first custom token on Nervos CKB!
+   Type Script:  xUDT Script (Args: 0x0abf028eb7f3927ac1...)
+================================================================================
+
+[INFO] Sender Final Native Balance: 178,428 CKB
+================================================================================

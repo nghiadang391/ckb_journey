@@ -1,0 +1,65 @@
+
+> create-spore-dob@1.0.0 start
+> tsx src/index.ts
+
+================================================================================
+=== STARTING LESSON 07: Spore DOB Creation (create-dob) ===
+================================================================================
+[INFO] Running Part 1: Initializing Sender & Reading Asset
+   - Sender Address:   ckt1qzda0cr08m8...zaas0h24c9myfz6
+   - Native CKB:       41886112 CKB
+   - Local Asset File: /Users/nghiadang/CKB/ckb_journey/projects/create-spore-dob/src/sample-asset.txt
+   - Size of Asset:    70 bytes
+
+--------------------------------------------------------------------------------
+[INFO] Running Part 2: Minting Spore DOB On-Chain
+--------------------------------------------------------------------------------
+[INFO] Constructing Spore skeleton and broadcasting mint transaction...
+tx {
+  version: '0x0',
+  cellDeps: [
+    { outPoint: [Object], depType: 'code' },
+    { outPoint: [Object], depType: 'depGroup' }
+  ],
+  headerDeps: [],
+  inputs: [ { since: '0x0', previousOutput: [Object] } ],
+  outputs: [
+    { capacity: '0x560de0700', lock: [Object], type: [Object] },
+    { capacity: '0x28f94cc592d', lock: [Object] }
+  ],
+  outputsData: [
+    '0x68000000100000001e000000680000000a000000746578742f706c61696e460000004e676f6327732070657273697374656e74206469676974616c206f626a65637420627974657320666c6173686564206f6e746f20434b4220676c6f62616c206d656d6f727921',
+    '0x'
+  ],
+  witnesses: [
+    '0x55000000100000005500000055000000410000001d031b0eda14009a8462ef2c24b0358dcc7095e4a775ebb433bf6af80bffb2ae00126a1c2ccaee568c6093c0369f5ec0e30840a2944a7705a0f15b83cabc02c200',
+    '0x010000ff150100000c00000010000000000000000501000008000000fd00000008000000f50000001000000030000000500000007687fed684ea38c35651427a3bb9834d1a29abd9cc930130895fb7a479129744a04325b9e4c52fc0f06736324d49d170c0921b81d8b57528d696cb3ea49d4764a1000000000000009d00000010000000300000007d0000004d8b078110890c0fe30b06c9287911723a5ca26381f804b7e228efa9f11dfed000000000490000001000000030000000310000009bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce801140000009d1edebedf8f026c0d597c4c5cd3f45dec1f755719298eaecd0297e216baf21dcde1dd2c0943d8c09670f505b4af61cefbc9d816'
+  ]
+}
+Spore created at transaction: 0xb4a6ca4ace1c5794982a95e47004f09322b92c1d3b61652fd2c4ca7917233a16
+Spore ID: 0x4d8b078110890c0fe30b06c9287911723a5ca26381f804b7e228efa9f11dfed0
+[SUCCESS] Spore DOB successfully created!
+   - Mint Tx Hash:     0xb4a6ca4ace1c5794982a95e47004f09322b92c1d3b61652fd2c4ca7917233a16
+   - Output Cell Index: 0
+
+--------------------------------------------------------------------------------
+[INFO] Running Part 3: Retrieving and Verifying On-Chain Content
+--------------------------------------------------------------------------------
+[INFO] Querying live Spore cell via CKB JSON-RPC...
+   Waiting for transaction block inclusion (polling devnet)...
+spore data:  {
+  contentType: 'text/plain',
+  content: '0x4e676f6327732070657273697374656e74206469676974616c206f626a65637420627974657320666c6173686564206f6e746f20434b4220676c6f62616c206d656d6f727921',
+  clusterId: undefined
+}
+   - Decoded Content:  "Ngoc's persistent digital object bytes flashed onto CKB global memory!"
+   - Content Type:     text/plain
+   - Content Match:    YES
+
+[INFO] Capacity cost analysis:
+   - Locked Capacity:  -28156 CKB
+     (Includes base cell size, data size, and transaction fees)
+   [SUCCESS] Spore DOB verified successfully. Content round-trip matches exactly!
+================================================================================
+=== LESSON 07 COMPLETED SUCCESSFULLY ===
+================================================================================

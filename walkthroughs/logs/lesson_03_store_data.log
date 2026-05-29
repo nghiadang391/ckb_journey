@@ -1,0 +1,61 @@
+
+> store-data@1.0.0 start
+> tsx src/index.ts
+
+================================================================================
+=== STARTING LESSON 3: Store Data on Cell (WRITE -> READ -> ANALYZE) ===
+================================================================================
+[INFO] Public Testnet is online! Current block height: 21249863
+
+[INFO] Checking Sender wallet balance...
+   Address: ckt1qzda0cr08m8...zaas0h24c9myfz6
+   Balance: 178428.99519726 CKB
+
+[WRITE] Storing UTF-8 message on-chain
+   Original Message: "Hello CKB from an embedded developer! Lesson 03 completed."
+   Hex Encoded:      0x48656c6c6f20434b422066726f6d20616e20656d62656464656420646576656c6f70657221204c6573736f6e20303320636f6d706c657465642e
+   Message Size:     58 bytes
+
+[INFO] Initializing cryptographical signer...
+   Signer initialized successfully.
+
+[INFO] Constructing Cell structure...
+   Required Cell Capacity: 119 CKB (61 CKB base + 58 CKB data)
+[INFO] Assembling inputs and calculating transaction fees...
+[INFO] Signing and broadcasting transaction...
+[TX] Transaction broadcasted to Mempool!
+   Transaction Hash: 0x85ed860a14462a0137e6113b8d261a7e960a74f9a61bdc5a2cfd61009dc05bde
+   Waiting for transaction to be mined and committed (approx. 5-10s)...
+
+   Polling transaction status... (Attempt 1/20)   Polling transaction status... (Attempt 2/20)   Polling transaction status... (Attempt 3/20)   Polling transaction status... (Attempt 4/20)   Polling transaction status... (Attempt 5/20)   Polling transaction status... (Attempt 6/20)   Polling transaction status... (Attempt 7/20)   Polling transaction status... (Attempt 8/20)   Polling transaction status... (Attempt 9/20)   Polling transaction status... (Attempt 10/20)
+[SUCCESS] Transaction successfully committed to block!
+
+================================================================================
+=== [READ] Querying cell data from the blockchain ===
+================================================================================
+[INFO] Fetching live cell at Transaction Hash 0x85ed860a14462a0137e6113b8d261a7e960a74f9a61bdc5a2cfd61009dc05bde, output index 0...
+   Retrieved Hex from chain: 0x48656c6c6f20434b422066726f6d20616e20656d62656464656420646576656c6f70657221204c6573736f6e20303320636f6d706c657465642e
+[INFO] Decoding hex back to human-readable UTF-8 string...
+   Decoded Message:          "Hello CKB from an embedded developer! Lesson 03 completed."
+
+   [SUCCESS] Decoded message matches original input! Match!
+
+================================================================================
+=== [ANALYSIS] Calculating distributed storage cost ===
+================================================================================
+[INFO] Storage Breakdown for this cell:
+   - Lock Script Size:    53 bytes (SECP256K1 signature validation)
+   - Capacity Field Size:  8 bytes (tracks native token balance)
+   --------------------------------------------------------------
+   - Base Cell Overhead:  61 CKB
+   - User Data Field:     58 CKB (58 bytes of text)
+   ==============================================================
+   - Total Locked Space:  119 CKB (119 CKB)
+
+[INFO] Key Takeaway: Since 1 CKB = 1 Byte of state storage, this data is locked
+   on-chain permanently until the cell is consumed/destroyed.
+   When you delete the cell, you get all your CKB back!
+
+[INFO] Sender Final Balance: 178309.99519204 CKB
+[INFO] Total Cost of operation: 119.00000522 CKB (including transaction fee)
+================================================================================

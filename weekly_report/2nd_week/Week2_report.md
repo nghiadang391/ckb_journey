@@ -22,6 +22,30 @@
 
 ### Practical Progress
 
-- Successfully implemented and verified **five robust developer exercises** in the local workspace.
+- Successfully implemented and verified **six robust developer exercises** in the local workspace (Lessons 02–07).
 - Structured all workspace logging outputs to utilize clean, telemetry-style text brackets.
-- Created local, version-controlled implementation plans and walkthrough verification files for all advanced modules.
+- Created local, version-controlled implementation plans and walkthrough verification files for all modules.
+
+### On-Chain Verification (Pudge Testnet)
+
+The following lessons broadcast real transactions to the **CKB Pudge public testnet** and can be independently verified via the Nervos Explorer:
+
+**Lesson 03 — Store Data on Cell**
+- Network: Pudge Testnet
+- Operation: Write UTF-8 message `"Hello CKB from an embedded developer! Lesson 03 completed."` (58 bytes) into a new cell data field
+- Capacity locked: 119 CKB (61 CKB base + 58 CKB data)
+- Transaction: `0x85ed860a14462a0137e6113b8d261a7e960a74f9a61bdc5a2cfd61009dc05bde`
+- Explorer: https://pudge.explorer.nervos.org/transaction/0x85ed860a14462a0137e6113b8d261a7e960a74f9a61bdc5a2cfd61009dc05bde
+
+**Lesson 04 — Fungible Tokens (xUDT)**
+- Network: Pudge Testnet
+- Token: `xNGOCVO` ("Ngoc's Extensible Token"), decimals: 8, total minted: 1,000,000 tokens
+- Token Type Args: `0x0abf028eb7f3927ac1ee9761fb650b60f16ea4c25e6a076db1cd94eff954b41300000000`
+- Mint Transaction: `0xcd4429a6b47c46952277312dde12bac9ea26b31da40e11606fd3ea131db0a469`
+  - Explorer: https://pudge.explorer.nervos.org/transaction/0xcd4429a6b47c46952277312dde12bac9ea26b31da40e11606fd3ea131db0a469
+- Transfer Transaction (250,000 tokens to Receiver): `0x9ebf8ccb96f54692ad5a3015f00f452b89d44c329c419963d8761bae30591e1b`
+  - Explorer: https://pudge.explorer.nervos.org/transaction/0x9ebf8ccb96f54692ad5a3015f00f452b89d44c329c419963d8761bae30591e1b
+- Token Metadata Cell Registration: `0x2d276b45ea82c6ce0afe2c121ecae07e16cfe19e9b40c6cf4cebe6c4e577d460`
+  - Explorer: https://pudge.explorer.nervos.org/transaction/0x2d276b45ea82c6ce0afe2c121ecae07e16cfe19e9b40c6cf4cebe6c4e577d460
+
+> Lessons 02, 05, 06, and 07 executed against the local offckb devnet and do not produce public on-chain traces.

@@ -1,0 +1,86 @@
+ 
+> simple-lock@1.0.0 start
+> tsx src/index.ts
+
+================================================================================
+=== STARTING LESSON 5: Custom Lock Script (TypeScript via ckb-js-vm) ===
+================================================================================
+[INFO] Local Devnet is online! Current block height: 7278
+
+[INFO] Initializing cryptographic signer...
+   Signer initialized successfully.
+
+================================================================================
+[PART 1] DEPLOYING CUSTOM CONTRACT BYTECODE
+================================================================================
+   Read compiled bytecode: 27860 bytes
+   Computed Contract Hash: 0xa667659d5249f576bd71ba154771088de515e7031b9a965797744473a0c86ef2
+
+[INFO] Allocating cell to deploy contract bytecode...
+[INFO] Signing and broadcasting Contract Deployment transaction...
+[TX] Deployment Transaction Hash: 0xe9044ffd0cd6d70c80f389cbbebbd15ec61538fb3a250484da37bdaaf508c1a5
+   Waiting for block inclusion (approx. 1-2s)...
+   Polling status (Attempt 1/20): pending
+   Polling status (Attempt 2/20): pending
+   Polling status (Attempt 3/20): pending
+   Polling status (Attempt 4/20): pending
+   Polling status (Attempt 5/20): pending
+   Polling status (Attempt 6/20): pending
+   Polling status (Attempt 7/20): pending
+   Polling status (Attempt 8/20): proposed
+   Polling status (Attempt 9/20): proposed
+   Polling status (Attempt 10/20): proposed
+   Polling status (Attempt 11/20): committed
+[SUCCESS] Contract successfully deployed on-chain!
+
+================================================================================
+[PART 2] LOCKING A CELL UNDER OUR HASH LOCK
+================================================================================
+[INFO] Configuring expected passphrase: "NgocPassphrase123"
+   Expected Passphrase Hash: 0xd43865f6f4b48971bf0c9cfe58f9489931563fc2b178d28e6001971e33c1905d
+   Custom Lock Script Args:  0x0000a667659d5249f576bd71ba154771088de515e7031b9a965797744473a0c86ef200d43865f6f4b48971bf0c9cfe58f9489931563fc2b178d28e6001971e33c1905d
+
+[INFO] Allocating cell locked by our Hash Lock script (Capacity: 150 CKB)...
+[INFO] Broadcasting Lock transaction...
+[TX] Lock Transaction Hash: 0xbe48da46d01ab90a3998fd757507d730c514434cc4a528ce72887973ab223d46
+   Waiting for block inclusion...
+   Polling status (Attempt 1/20): pending
+   Polling status (Attempt 2/20): pending
+   Polling status (Attempt 3/20): pending
+   Polling status (Attempt 4/20): pending
+   Polling status (Attempt 5/20): pending
+   Polling status (Attempt 6/20): pending
+   Polling status (Attempt 7/20): pending
+   Polling status (Attempt 8/20): proposed
+   Polling status (Attempt 9/20): proposed
+   Polling status (Attempt 10/20): proposed
+   Polling status (Attempt 11/20): committed
+[SUCCESS] Cell locked successfully!
+
+================================================================================
+[PART 3] VERIFYING VALIDATION LOGIC ON-CHAIN
+================================================================================
+[CASE A] Attempting to unlock with WRONG passphrase "WrongPassphrase123"...
+[INFO] Broadcasting unauthorized unlock transaction (expecting REJECTION)...
+[SUCCESS] SUCCESS: Transaction was correctly REJECTED by CKB-VM lock script!
+   Validation Error message: "Client request error TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[0].Lock, cause: ValidationFailure: see error code 11 on page https://nervosnetwork.github.io/ckb-script-error-codes/by-type-hash/ac4db0d0c028ba0d73dec9ee5e6a3c0c98fcdfca895402a3285d680e964dcb46.html#11 })"
+
+[CASE B] Attempting to unlock with CORRECT passphrase "NgocPassphrase123"...
+[INFO] Broadcasting authorized unlock transaction (expecting SUCCESS)...
+[TX] Unlock Transaction Hash: 0x23e6be292cd409de6ee4b9cd2b8b26ec458818838e68f33a1e64f5a382891555
+   Waiting for block inclusion...
+   Polling status (Attempt 1/20): pending
+   Polling status (Attempt 2/20): pending
+   Polling status (Attempt 3/20): pending
+   Polling status (Attempt 4/20): pending
+   Polling status (Attempt 5/20): pending
+   Polling status (Attempt 6/20): pending
+   Polling status (Attempt 7/20): pending
+   Polling status (Attempt 8/20): proposed
+   Polling status (Attempt 9/20): proposed
+   Polling status (Attempt 10/20): proposed
+   Polling status (Attempt 11/20): committed
+[SUCCESS] SUCCESS: Cell successfully unlocked and claimed using the correct passcode! Match!
+================================================================================
+=== LESSON 5 COMPLETED SUCCESSFULLY ===
+================================================================================

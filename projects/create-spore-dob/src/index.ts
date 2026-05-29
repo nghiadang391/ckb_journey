@@ -83,8 +83,13 @@ async function main() {
     throw new Error("[ERROR] Failed to retrieve Spore cell data from the blockchain.");
   }
 
-  // Parse retrieved content back to raw string
-  const retrievedContent = Buffer.from(sporeData.content).toString("utf-8");
+  // Parse retrieved content back to raw string.
+  // sporeData.content is a 0x-prefixed hex string (CCC Bytes type), so we must
+  // strip the prefix and decode from hex before converting to UTF-8.
+  const contentHex = typeof sporeData.content === "string"
+    ? (sporeData.content as string).replace(/^0x/, "")
+    : Buffer.from(sporeData.content as Uint8Array).toString("hex");
+  const retrievedContent = Buffer.from(contentHex, "hex").toString("utf-8");
 
   console.log(`   - Decoded Content:  "${retrievedContent}"`);
   console.log(`   - Content Type:     ${sporeData.contentType}`);

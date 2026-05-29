@@ -1,0 +1,48 @@
+
+> molecule-serialization@1.0.0 start
+> tsx src/index.ts
+
+================================================================================
+=== STARTING LESSON 06: Molecule Serialization (ccc-molecule) ===
+================================================================================
+[INFO] Running Part 1: Basic Primitive Codecs
+   - Uint8 original:     42
+   - Uint8 serialized:   0x2a (1 byte)
+   - Uint8 deserialized: 42
+
+   - Uint128 original:   1000000000 shannons
+   - Uint128 serialized: 0x00ca9a3b000000000000000000000000 (16 bytes)
+   - Uint128 decoded:    1000000000
+
+================================================================================
+[INFO] Running Part 2: Fixed Struct Serialization (Attributes)
+================================================================================
+   - Struct original:     STR: 85, DEX: 90
+   - Struct serialized:   0x555a4b5f (4 bytes)
+   - Struct deserialized: STR: 85, DEX: 90
+   - Bytes match size:    Expected 4 bytes (1 byte per Attribute value)
+   [SUCCESS] Struct matches the exact byte allocation expected in bare-metal C memory!
+
+================================================================================
+[INFO] Running Part 3: Dynamic Table & Class Entities (HeroEntity)
+================================================================================
+[INFO] Hero Status Telemetry:
+   - Hero ID:   1024
+   - Level:     15
+   - HP:        450
+   - Stats:     STR: 90 | DEX: 80 | END: 85 | SPD: 70
+   - Skills:    WeaponSwords (Lvl: 5), Dodge (Lvl: None), Mercantile (Lvl: 3)
+
+   - Entity Serialized:   0x3f000000180000001a0000001b0000001d0000002100000000040fc2015a5055... (63 bytes total)
+   - Entity Deserialized successfully!
+[INFO] Hero Status Telemetry:
+   - Hero ID:   1024
+   - Level:     15
+   - HP:        450
+   - Stats:     STR: 90 | DEX: 80 | END: 85 | SPD: 70
+   - Skills:    WeaponSwords (Lvl: 5), Dodge (Lvl: None), Mercantile (Lvl: 3)
+
+   [SUCCESS] Hero telemetry matches original exactly across serializations! Match!
+================================================================================
+=== LESSON 06 COMPLETED SUCCESSFULLY ===
+================================================================================

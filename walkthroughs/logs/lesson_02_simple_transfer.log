@@ -1,0 +1,38 @@
+
+> simple-transfer@1.0.0 start
+> tsx src/index.ts
+
+======================================================================
+=== STARTING LESSON 2: Simple CKB Transfer on Local Devnet ===
+======================================================================
+[INFO] Local node is online! Current Devnet Block Height: 21249795
+
+[INFO] Reading initial ledger balances...
+   [Sender]   ckt1qzda0c...4c9myfz6
+              Balance: 179168.99522201 CKB
+   [Receiver] ckt1qzda0c...qq23mmmd
+              Balance: 1397.7999492 CKB
+
+[INFO] Initializing Sender cryptographic signer...
+   Sender Signer initialized successfully.
+
+[INFO] Allocating transfer transaction (Sending 500 CKB)...
+[INFO] Assembling transaction inputs (UTXO matching)...
+[INFO] Calculating and adding transaction gas/byte fees...
+[INFO] Signing transaction inputs with Sender private key...
+[TX] Transaction broadcasted to local Devnet mempool!
+   Transaction Hash: 0x24db393c5abefdb8121fe0d3fac9cf7c07094cb69b9dcf2462a704d66d0bedeb
+   Waiting for block producer to mine the transaction (approx. 1-2s)...
+
+[WARNING] Transaction is taking longer than expected to commit. Checking balances anyway...
+
+======================================================================
+=== TRANSACTION RESULT & FINAL BALANCES ===
+======================================================================
+   [Sender]   Balance: 179168.99522201 CKB
+              Diff:    -0 CKB
+   [Receiver] Balance: 1397.7999492 CKB
+              Diff:    +0 CKB
+
+[SUCCESS] Success! You just executed a bare-metal state transition on CKB!
+======================================================================
