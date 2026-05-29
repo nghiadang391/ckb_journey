@@ -1,0 +1,17 @@
+{
+  "name": "store-data",
+  "version": "1.0.0",
+  "description": "Store arbitrary data on a CKB cell using CCC SDK",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@ckb-ccc/core": "*"
+  },
+  "devDependencies": {
+    "tsx": "*",
+    "typescript": "*"
+  }
+}

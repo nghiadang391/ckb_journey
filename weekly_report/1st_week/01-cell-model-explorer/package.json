@@ -1,0 +1,22 @@
+{
+  "name": "01-cell-model-explorer",
+  "version": "1.0.0",
+  "description": "CKB Cell Model Explorer - Lesson 1: Explore live cells on the CKB Testnet",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@ckb-ccc/core": "*"
+  },
+  "devDependencies": {
+    "tsx": "*",
+    "typescript": "*"
+  }
+}

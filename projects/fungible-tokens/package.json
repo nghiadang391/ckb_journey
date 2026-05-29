@@ -1,0 +1,17 @@
+{
+  "name": "fungible-tokens",
+  "version": "1.0.0",
+  "description": "Issue and Transfer custom Fungible Tokens (xUDT) and create metadata on CKB using CCC SDK",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@ckb-ccc/core": "*"
+  },
+  "devDependencies": {
+    "tsx": "*",
+    "typescript": "*"
+  }
+}

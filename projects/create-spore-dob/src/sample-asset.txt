@@ -1,0 +1,1 @@
+Ngoc's persistent digital object bytes flashed onto CKB global memory!

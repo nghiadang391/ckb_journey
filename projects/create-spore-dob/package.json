@@ -1,0 +1,18 @@
+{
+  "name": "create-spore-dob",
+  "version": "1.0.0",
+  "description": "Lesson 07: Spore DOB Creation on CKB",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "tsx src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "tsx": "^4.19.4",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@ckb-ccc/core": "^1.5.3",
+    "@spore-sdk/core": "0.2.0-beta.3"
+  }
+}

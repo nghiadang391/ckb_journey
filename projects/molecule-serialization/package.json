@@ -1,0 +1,17 @@
+{
+  "name": "molecule-serialization",
+  "version": "1.0.0",
+  "description": "Lesson 06: Molecule Serialization (ccc-molecule) for CKB",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "tsx src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "tsx": "^4.19.4",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@ckb-ccc/shell": "^1.1.6"
+  }
+}

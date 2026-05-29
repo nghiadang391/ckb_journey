@@ -1,7 +1,0 @@
-0. learn about blockchain in general (I do not have background in block so It took a while)
-1. learn about passkey, asymetric cryptography (cryptography in general), how does it work, how to create a wallet, 
-2. learn about CKB, RISC-V, cell, mempool
-3.Understand lock script and type script (optional)
-  There is a default lock script that most people use. You can create your own.
-4. Know the differenct between CKB, Bitcoin and ETH
-5. Run a model explorer as reference

@@ -1,0 +1,22 @@
+{
+  "name": "simple-lock",
+  "version": "1.0.0",
+  "description": "Custom Hash Lock smart contract in TypeScript using ckb-js-vm and CCC SDK",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build:contract": "mkdir -p dist && esbuild --platform=neutral --minify --bundle --external:@ckb-js-std/bindings --target=es2022 contract/src/index.ts --outfile=dist/hash-lock.js && offckb debugger --read-file dist/hash-lock.js --bin node_modules/ckb-testtool/src/unittest/defaultScript/ckb-js-vm -- -c dist/hash-lock.bc",
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@ckb-ccc/core": "*",
+    "@ckb-js-std/bindings": "~0.1.0",
+    "@ckb-js-std/core": "~0.1.1"
+  },
+  "devDependencies": {
+    "ckb-testtool": "~0.1.1",
+    "esbuild": "~0.25.8",
+    "tsx": "*",
+    "typescript": "*"
+  }
+}
