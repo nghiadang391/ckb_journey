@@ -1,0 +1,148 @@
+nghiadang@Nghias-MacBook-Pro ts-sudt % npm run build
+npm warn Unknown project config "allow-builds". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> ts-sudt@1.0.0 build
+> tsc --noEmit && esbuild --platform=neutral --minify --bundle --external:@ckb-js-std/bindings --target=es2022 src/index.ts --outfile=dist/index.js && offckb debugger --read-file dist/index.js --bin node_modules/ckb-testtool/src/unittest/defaultScript/ckb-js-vm -- -c dist/index.bc
+
+
+  dist/index.js  22.4kb
+
+⚡ Done in 10ms
+Run result: 0
+All cycles: 37847756(36.1M)
+(node:79784) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+nghiadang@Nghias-MacBook-Pro ts-sudt % npm start
+npm warn Unknown project config "allow-builds". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> ts-sudt@1.0.0 start
+> offckb debugger --tx-file mock_tx.json --cell-index 0 --cell-type input --script-group-type type --read-file dist/index.bc --bin node_modules/ckb-testtool/src/unittest/defaultScript/ckb-js-vm -- -r
+
+Script log: Run from file, local access enabled. For Testing only.
+Script log: === STARTING LESSON 09: sUDT Type Script (RFC-0025) ===
+Script log: [INFO] Script args length (after VM header slice): 32 bytes
+Script log: [INFO] Checking for owner mode (issuer presence in inputs)...
+Script log: [INFO] Transfer mode: verifying token conservation...
+Script log: [INFO] Input token sum:  100
+Script log: [INFO] Output token sum: 90
+Script log: [SUCCESS] sUDT validation passed (conservation holds). Exit 0.
+Run result: 0
+All cycles: 13353166(12.7M)
+(node:82030) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+nghiadang@Nghias-MacBook-Pro ts-sudt % npm test
+
+> ts-sudt@1.0.0 test
+> NODE_OPTIONS='--no-warnings' jest --maxWorkers=1
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input lock script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 539
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input type script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Script log: === STARTING LESSON 09: sUDT Type Script (RFC-0025) ===
+    ║ Script log: [INFO] Script args length (after VM header slice): 32 bytes
+    ║ Script log: [INFO] Checking for owner mode (issuer presence in inputs)...
+    ║ Script log: [INFO] Transfer mode: verifying token conservation...
+    ║ Script log: [INFO] Input token sum:  100
+    ║ Script log: [INFO] Output token sum: 90
+    ║ Script log: [SUCCESS] sUDT validation passed (conservation holds). Exit 0.
+    ║ Run result: 0
+    ║ All cycles: 13362395(12.7M)
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input lock script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 539
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input type script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Script log: === STARTING LESSON 09: sUDT Type Script (RFC-0025) ===
+    ║ Script log: [INFO] Script args length (after VM header slice): 32 bytes
+    ║ Script log: [INFO] Checking for owner mode (issuer presence in inputs)...
+    ║ Script log: [INFO] Owner mode: issuer's lock detected in inputs. Minting allowed.
+    ║ Script log: [SUCCESS] sUDT validation passed (owner mode). Exit 0.
+    ║ Run result: 0
+    ║ All cycles: 13185445(12.6M)
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input lock script
+    ║ Index: 1
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 539
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+PASS src/sudt.test.ts
+  sUDT On-Chain TypeScript Script Tests
+    ✓ sudt-simple transfer success (inputs 100 >= outputs 90) (548 ms)
+    ✓ sudt transfer failed (inflation: inputs 100 < outputs 110) (380 ms)
+    ✓ sudt owner mode (bypass balance check: outputs 500 > inputs 100) (384 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        2.241 s
+Ran all test suites.
+nghiadang@Nghias-MacBook-Pro ts-sudt %

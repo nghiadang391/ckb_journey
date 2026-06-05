@@ -1,0 +1,23 @@
+{
+  "name": "ts-hello-world",
+  "version": "1.0.0",
+  "description": "Lesson 08: Simplest on-chain TypeScript script via ckb-js-vm",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc --noEmit && esbuild --platform=neutral --minify --bundle --external:@ckb-js-std/bindings --target=es2022 src/index.ts --outfile=dist/index.js && offckb debugger --read-file dist/index.js --bin node_modules/ckb-testtool/src/unittest/defaultScript/ckb-js-vm -- -c dist/index.bc",
+    "start": "offckb debugger --read-file dist/index.bc --bin node_modules/ckb-testtool/src/unittest/defaultScript/ckb-js-vm -- -r",
+    "clean": "rm -rf dist/*"
+  },
+  "devDependencies": {
+    "ckb-testtool": "~1.0.0",
+    "esbuild": "~0.25.0",
+    "typescript": "~5.8.0"
+  },
+  "dependencies": {
+    "@ckb-js-std/bindings": "~1.0.0",
+    "@ckb-js-std/core": "~1.0.0"
+  }
+}
+

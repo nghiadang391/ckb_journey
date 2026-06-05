@@ -13,7 +13,7 @@ const SENDER_PRIVKEY = "0x59ddda57ba06d6e9c5fa9040bdb98b4b098c2fce6520d39f51bc5e
 const SENDER_ADDRESS = "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqvarm0tahu0qfkq6ktuf3wd8azaas0h24c9myfz6";
 
 // The message we want to store on-chain.
-const MESSAGE_TO_STORE = "Hello CKB from an embedded developer! Lesson 03 completed.";
+const MESSAGE_TO_STORE = "Hello CKB from an embedded developer! Lesson 03 completed. 🚀";
 
 // Connect to the public Testnet (Pudge) to align with Lesson 2
 const client = new ccc.ClientPublicTestnet();
@@ -59,12 +59,12 @@ function separator(): void {
 // ============================================================================
 async function main() {
   separator();
-  console.log("=== STARTING LESSON 3: Store Data on Cell (WRITE -> READ -> ANALYZE) ===");
+  console.log("🎬 STARTING LESSON 3: Store Data on Cell (WRITE -> READ -> ANALYZE)");
   separator();
 
   // 0. Verify Connection
   const tip = await client.getTip();
-  console.log(`[INFO] Public Testnet is online! Current block height: ${tip}`);
+  console.log(`📡 Public Testnet is online! Current block height: ${tip}`);
   console.log();
 
   // Helper for balance
@@ -74,7 +74,7 @@ async function main() {
   };
 
   // 1. Initial State Check
-  console.log("[INFO] Checking Sender wallet balance...");
+  console.log("🔍 Checking Sender wallet balance...");
   const initialBalance = await getBalance(SENDER_ADDRESS);
   console.log(`   Address: ${SENDER_ADDRESS.slice(0, 15)}...${SENDER_ADDRESS.slice(-15)}`);
   console.log(`   Balance: ${shannonsToCKB(initialBalance)}`);
@@ -83,22 +83,22 @@ async function main() {
   // ============================================================================
   // OPERATION 1 — WRITE: Store a text message on-chain
   // ============================================================================
-  console.log("[WRITE] Storing UTF-8 message on-chain");
+  console.log("💾 [OPERATION 1] WRITE: Storing UTF-8 message on-chain");
   console.log(`   Original Message: "${MESSAGE_TO_STORE}"`);
-  
+
   const hexMessage = utf8ToHex(MESSAGE_TO_STORE);
   const messageBytes = Buffer.byteLength(MESSAGE_TO_STORE, "utf-8");
   console.log(`   Hex Encoded:      ${hexMessage}`);
   console.log(`   Message Size:     ${messageBytes} bytes`);
   console.log();
 
-  console.log("[INFO] Initializing cryptographical signer...");
+  console.log("🔑 Initializing cryptographical signer...");
   const signer = new ccc.SignerCkbPrivateKey(client, SENDER_PRIVKEY);
   const senderAddressObj = await ccc.Address.fromString(SENDER_ADDRESS, client);
   console.log("   Signer initialized successfully.");
   console.log();
 
-  console.log("[INFO] Constructing Cell structure...");
+  console.log("🧱 Constructing Cell structure...");
   // In CKB, cells store data in their data field.
   // 1 CKB capacity covers 1 byte of space.
   // Base Cell overhead is 61 CKB (lock script: 53 bytes, capacity: 8 bytes).
@@ -116,13 +116,13 @@ async function main() {
     outputsData: [hexMessage],
   });
 
-  console.log("[INFO] Assembling inputs and calculating transaction fees...");
+  console.log("🔄 Assembling inputs and calculating transaction fees...");
   await tx.completeInputsByCapacity(signer);
   await tx.completeFeeBy(signer, 1000n); // 1000 shannons/byte fee rate
 
-  console.log("[INFO] Signing and broadcasting transaction...");
+  console.log("✍️ Signing and broadcasting transaction...");
   const txHash = await signer.sendTransaction(tx);
-  console.log(`[TX] Transaction broadcasted to Mempool!`);
+  console.log(`🚀 Transaction broadcasted to Mempool!`);
   console.log(`   Transaction Hash: ${txHash}`);
   console.log("   Waiting for transaction to be mined and committed (approx. 5-10s)...");
   console.log();
@@ -141,9 +141,9 @@ async function main() {
   console.log();
 
   if (isConfirmed) {
-    console.log("[SUCCESS] Transaction successfully committed to block!");
+    console.log("✅ Transaction successfully committed to block!");
   } else {
-    console.log("[WARNING] Transaction took longer than expected to commit. Querying the state anyway...");
+    console.log("⚠️ Transaction took longer than expected to commit. Querying the state anyway...");
   }
   console.log();
 
@@ -151,30 +151,30 @@ async function main() {
   // OPERATION 2 — READ: Retrieve the stored message from the chain
   // ============================================================================
   separator();
-  console.log("=== [READ] Querying cell data from the blockchain ===");
+  console.log("📖 [OPERATION 2] READ: Querying cell data from the blockchain");
   separator();
-  console.log(`[INFO] Fetching live cell at Transaction Hash ${txHash}, output index 0...`);
-  
+  console.log(`🔍 Fetching live cell at Transaction Hash ${txHash}, output index 0...`);
+
   // Fetch live cell from the chain
   const cell = await client.getCellLive({ txHash, index: 0 }, true);
 
   if (!cell) {
-    throw new Error("[ERROR] Could not retrieve the freshly created cell from the blockchain.");
+    throw new Error("❌ Error: Could not retrieve the freshly created cell from the blockchain.");
   }
 
   const fetchedDataHex = cell.outputData;
   console.log(`   Retrieved Hex from chain: ${fetchedDataHex}`);
-  
-  console.log("[INFO] Decoding hex back to human-readable UTF-8 string...");
+
+  console.log("🔓 Decoding hex back to human-readable UTF-8 string...");
   const decodedMessage = hexToUtf8(fetchedDataHex);
   console.log(`   Decoded Message:          "${decodedMessage}"`);
   console.log();
 
   // Verify match
   if (decodedMessage === MESSAGE_TO_STORE) {
-    console.log("   [SUCCESS] Decoded message matches original input! Match!");
+    console.log("   🎉 SUCCESS: Decoded message matches original input! ✅ Match!");
   } else {
-    console.log("   [ERROR] Decoded message does NOT match original! Mismatch.");
+    console.log("   ❌ ERROR: Decoded message does NOT match original! Mismatch.");
   }
   console.log();
 
@@ -182,15 +182,15 @@ async function main() {
   // OPERATION 3 — CAPACITY ANALYSIS: Show the storage cost
   // ============================================================================
   separator();
-  console.log("=== [ANALYSIS] Calculating distributed storage cost ===");
+  console.log("📊 [OPERATION 3] CAPACITY ANALYSIS: Calculating distributed storage cost");
   separator();
-  
+
   const cellCapacity = cell.cellOutput.capacity;
   const baseOverheadBytes = 61;
   const dataBytes = messageBytes;
   const totalLockedCKB = cellCapacity / ONE_CKB;
 
-  console.log(`[INFO] Storage Breakdown for this cell:`);
+  console.log(`📦 Storage Breakdown for this cell:`);
   console.log(`   - Lock Script Size:    53 bytes (SECP256K1 signature validation)`);
   console.log(`   - Capacity Field Size:  8 bytes (tracks native token balance)`);
   console.log(`   --------------------------------------------------------------`);
@@ -199,14 +199,14 @@ async function main() {
   console.log(`   ==============================================================`);
   console.log(`   - Total Locked Space:  ${totalLockedCKB} CKB (${shannonsToCKB(cellCapacity)})`);
   console.log();
-  console.log("[INFO] Key Takeaway: Since 1 CKB = 1 Byte of state storage, this data is locked");
+  console.log("💡 Key Takeaway: Since 1 CKB = 1 Byte of state storage, this data is locked");
   console.log("   on-chain permanently until the cell is consumed/destroyed.");
   console.log("   When you delete the cell, you get all your CKB back!");
   console.log();
 
   const finalBalance = await getBalance(SENDER_ADDRESS);
-  console.log(`[INFO] Sender Final Balance: ${shannonsToCKB(finalBalance)}`);
-  console.log(`[INFO] Total Cost of operation: ${shannonsToCKB(initialBalance - finalBalance)} (including transaction fee)`);
+  console.log(`💰 Sender Final Balance: ${shannonsToCKB(finalBalance)}`);
+  console.log(`💸 Total Cost of operation: ${shannonsToCKB(initialBalance - finalBalance)} (including transaction fee)`);
   separator();
 
   // Cleanly terminate active network sockets to exit the process
@@ -214,6 +214,6 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error("[ERROR] Fatal Error executing Store Data script:", err);
+  console.error("❌ Fatal Error executing Store Data script:", err);
   process.exit(1);
 });

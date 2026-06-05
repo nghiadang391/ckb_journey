@@ -1,5 +1,7 @@
 node_modules/
 dist/
+build/
+target/
 .parcel-cache/
 .DS_Store
 

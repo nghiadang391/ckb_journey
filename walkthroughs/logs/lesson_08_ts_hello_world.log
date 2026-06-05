@@ -1,0 +1,30 @@
+nghiadang@Nghias-MacBook-Pro ts-hello-world % npm run build             
+npm warn Unknown project config "allow-builds". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> ts-hello-world@1.0.0 build
+> tsc --noEmit && esbuild --platform=neutral --minify --bundle --external:@ckb-js-std/bindings --target=es2022 src/index.ts --outfile=dist/index.js && offckb debugger --read-file dist/index.js --bin node_modules/ckb-testtool/src/unittest/defaultScript/ckb-js-vm -- -c dist/index.bc
+
+
+  dist/index.js  373b 
+
+⚡ Done in 1ms
+Run result: 0
+All cycles: 3724784(3.6M)
+(node:79487) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+nghiadang@Nghias-MacBook-Pro ts-hello-world % npm start                 
+npm warn Unknown project config "allow-builds". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> ts-hello-world@1.0.0 start
+> offckb debugger --read-file dist/index.bc --bin node_modules/ckb-testtool/src/unittest/defaultScript/ckb-js-vm -- -r
+
+Script log: Run from file, local access enabled. For Testing only.
+Script log: === STARTING LESSON 08: On-Chain TS Script (Hello World) ===
+Script log: [INFO] Script is executing inside CKB-VM (QuickJS via ckb-js-vm).
+Script log: [INFO] Hello from an embedded developer on Nervos CKB!
+Script log: [SUCCESS] Script validation passed. Exiting with code 0.
+Run result: 0
+All cycles: 3604926(3.4M)
+(node:79585) ExperimentalWarning: WASI is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+nghiadang@Nghias-MacBook-Pro ts-hello-world %

@@ -1,0 +1,28 @@
+{
+  "name": "ts-sudt",
+  "version": "1.0.0",
+  "description": "Lesson 09: Simple UDT (sUDT) type script in TypeScript via ckb-js-vm",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc --noEmit && esbuild --platform=neutral --minify --bundle --external:@ckb-js-std/bindings --target=es2022 src/index.ts --outfile=dist/index.js && offckb debugger --read-file dist/index.js --bin node_modules/ckb-testtool/src/unittest/defaultScript/ckb-js-vm -- -c dist/index.bc",
+    "start": "offckb debugger --tx-file mock_tx.json --cell-index 0 --cell-type input --script-group-type type --read-file dist/index.bc --bin node_modules/ckb-testtool/src/unittest/defaultScript/ckb-js-vm -- -r",
+    "test": "NODE_OPTIONS='--no-warnings' jest --maxWorkers=1",
+    "clean": "rm -rf dist/*"
+  },
+  "devDependencies": {
+    "ckb-testtool": "~1.0.0",
+    "esbuild": "~0.25.0",
+    "typescript": "~5.8.0",
+    "@types/node": "~22.13.8",
+    "@types/jest": "~29.5.14",
+    "ts-jest": "~29.2.6",
+    "jest": "~29.7.0",
+    "@ckb-ccc/core": "~1.12.0"
+  },
+  "dependencies": {
+    "@ckb-js-std/bindings": "~1.0.0",
+    "@ckb-js-std/core": "~1.0.0"
+  }
+}

@@ -1,0 +1,100 @@
+
+> rust-sudt-tests@1.0.0 test
+> NODE_OPTIONS='--no-warnings' jest --maxWorkers=1
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input lock script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 539
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input type script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 17841(17.4K)
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input lock script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 539
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input type script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 13985(13.7K)
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input lock script
+    ║ Index: 1
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 539
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+PASS src/sudt.test.ts
+  sUDT On-Chain Rust Script Tests
+    ✓ sudt-simple transfer success (inputs 100 >= outputs 90) (44 ms)
+    ✓ sudt transfer failed (inflation: inputs 100 < outputs 110) (27 ms)
+    ✓ sudt owner mode (bypass balance check: outputs 500 > inputs 100) (31 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        0.667 s, estimated 1 s
+Ran all test suites.
