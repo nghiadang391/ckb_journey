@@ -9,9 +9,9 @@
 | Level | Status | Topics |
 |---|---|---|
 | **Intro** | Done | CKB concepts, OffCKB setup, CKB Academy Lessons 1 & 2 |
-| **Beginner** | In Progress | Transfer CKB, Store Data on Cell, Fungible Tokens, Simple Lock |
-| **Intermediate** | Pending | Script dev course, sUDT, Nervos DAO, Spore/DOBs |
-| **Advanced** | Pending | SSRI protocol, RGB++, xUDT, iCKB |
+| **Beginner** | Done | Transfer CKB, Store Data on Cell, Fungible Tokens (xUDT), Simple Lock |
+| **Intermediate** | Done | Molecule Serialization, Spore DOBs, JS-VM scripts, Rust sUDT contracts |
+| **Advanced** | In Progress | SSRI protocol, RGB++, xUDT, iCKB |
 
 ---
 
@@ -19,11 +19,13 @@
 
 | Tool | Version | Purpose |
 |---|---|---|
-| **Node.js** | v26+ | JavaScript runtime |
+| **Node.js** | v26+ | JavaScript runtime for dApps and Jest tests |
 | **npm** | v11+ | Package manager |
 | **OffCKB** | ≥ v0.4.0 | Local CKB Devnet & dev tooling |
 | **CCC SDK** | ≥ v0.0.14 | JavaScript/TypeScript SDK for CKB dApps |
-| **Rust** | latest stable | Smart contract (Script) development |
+| **Rust** | stable | Smart contract (Script) development |
+| **RISC-V Target** | `riscv64imac-unknown-none-elf` | Rust compilation target for CKB-VM |
+| **`riscv64-elf-gcc`** | GCC cross-compiler | GNU cross-linker for RISC-V build bindings |
 
 ### Quick Start — Local Devnet
 
@@ -49,24 +51,33 @@ The local devnet runs at: `http://127.0.0.1:28114`
 
 ```
 CKB/
-├── README.md                   # This file — overview and progress tracker
-├── blockchain_intro.md         # Personal notes: blockchain for embedded engineers
-├── weekly-logs/                # Weekly developer logs (required for the program)
-│   ├── week-01.md
-│   └── ...
-└── projects/                   # Hands-on dApp and script projects
-    ├── simple-transfer/        # Beginner: Transfer CKB between accounts
-    ├── store-data/             # Beginner: Store data on a Cell
-    ├── fungible-token/         # Beginner: Create a token (xUDT standard)
-    └── simple-lock/            # Beginner: Custom lock script in Rust
+├── README.md                     # Overview and progress tracker
+├── ckb_journey/
+│   ├── README.md                 # Journey-specific log and structures
+│   ├── weekly_report/            # Weekly developer reports
+│   │   ├── 1st_week/
+│   │   ├── 2nd_week/
+│   │   └── 3rd_week/
+│   ├── implementation_plans/     # Implementation plan markdown records
+│   ├── walkthroughs/             # Walkthrough guides and transaction logs
+│   │   └── logs/
+│   └── projects/                 # Hands-on dApp and script projects
+│       ├── simple-transfer/      # Lesson 02: Transfer CKB between accounts
+│       ├── store-data/           # Lesson 03: Store data on a Cell
+│       ├── fungible-tokens/      # Lesson 04: Create custom xUDT assets
+│       ├── simple-lock/          # Lesson 05: Cryptographic custom lock script
+│       ├── molecule-serialization/ # Lesson 06: Molecule codecs and entities
+│       ├── create-spore-dob/     # Lesson 07: Mint Spore digital objects (DOBs)
+│       ├── ts-hello-world/       # Lesson 08: TypeScript smart contract (ckb-js-vm)
+│       ├── ts-sudt/              # Lesson 09: TypeScript sUDT contract (ckb-js-vm)
+│       └── rust-sudt/            # Lesson 10: On-Chain Rust sUDT contract (RISC-V)
 ```
 
 ---
 
 ## Weekly Developer Logs
 
-Weekly logs are maintained in the [`weekly-logs/`](./weekly-logs/) directory,
-published every week as required by the CKB Builders' Track.
+Weekly logs are maintained in the [`weekly_report/`](./weekly_report/) directory, published every week as required by the CKB Builders' Track.
 
 ---
 
@@ -84,8 +95,6 @@ published every week as required by the CKB Builders' Track.
 ---
 
 ## Key Concepts (TL;DR for Embedded Engineers)
-
-> Full notes in [`blockchain_intro.md`](./blockchain_intro.md)
 
 - **Blockchain** = A globally distributed, append-only database (like a ROM shared across thousands of machines)
 - **Smart Contract** = A RISC-V binary deployed on-chain, executed by every node (CKB-VM)
