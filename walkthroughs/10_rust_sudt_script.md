@@ -55,7 +55,7 @@ Here is the side-by-side comparison of cycles consumed between the TypeScript sU
 
 ## Verification Logs
 
-The tests successfully pass inside `projects/rust-sudt`:
+The tests successfully pass inside `projects/10_rust_sudt_script`:
 ```bash
 > rust-sudt-tests@1.0.0 test
 > NODE_OPTIONS='--no-warnings' jest --maxWorkers=1

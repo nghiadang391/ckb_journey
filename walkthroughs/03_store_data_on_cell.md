@@ -7,10 +7,10 @@ We have successfully created and executed the Store Data project. This project i
 ## Codebase Additions
 
 We created the following files inside the project directory:
-* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/store-data/package.json): Standard runner configurations.
-* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/store-data/tsconfig.json): TypeScript configuration specifications.
-* [system-scripts.json](file:///Users/nghiadang/CKB/ckb_journey/projects/store-data/system-scripts.json): Ref system scripts.
-* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/store-data/src/index.ts): The main text storage runner:
+* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/03_store_data_on_cell/package.json): Standard runner configurations.
+* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/03_store_data_on_cell/tsconfig.json): TypeScript configuration specifications.
+* [system-scripts.json](file:///Users/nghiadang/CKB/ckb_journey/projects/03_store_data_on_cell/system-scripts.json): Ref system scripts.
+* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/03_store_data_on_cell/src/index.ts): The main text storage runner:
   * Part 1 (Write): Converts a UTF-8 string into hex bytes and creates a transaction that allocates a new cell containing the hex data.
   * Part 2 (Read): Polls block inclusion, queries the live cell by transaction hash, extracts the hex data, and decodes it back to human-readable UTF-8.
   * Part 3 (Analysis): Breaks down the exact on-chain memory capacity allocation (61 CKB base overhead + N CKB data bytes).

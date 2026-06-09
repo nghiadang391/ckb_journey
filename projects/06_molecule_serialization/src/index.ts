@@ -5,7 +5,7 @@
  * and advanced auto-serializable Class Entities.
  * 
  * HOW TO RUN IT:
- * 1. cd ckb_journey/projects/molecule-serialization
+ * 1. cd ckb_journey/projects/06_molecule_serialization
  * 2. npm install
  * 3. npm start
  * 

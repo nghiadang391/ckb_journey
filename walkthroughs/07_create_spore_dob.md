@@ -7,9 +7,9 @@ We have successfully created and executed the Spore DOB Creation project. This l
 ## Codebase Additions
 
 We created the following files inside the new project directory:
-* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/create-spore-dob/package.json): Project dependencies including `@spore-sdk/core` and CLI scripts.
-* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/create-spore-dob/tsconfig.json): TypeScript compilation specs.
-* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/create-spore-dob/src/index.ts): The Spore minting and verification script:
+* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/07_create_spore_dob/package.json): Project dependencies including `@spore-sdk/core` and CLI scripts.
+* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/07_create_spore_dob/tsconfig.json): TypeScript compilation specs.
+* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/07_create_spore_dob/src/index.ts): The Spore minting and verification script:
   * **Part 1 (Mint)**: Reads a local asset file, builds the Spore skeleton with `@spore-sdk/core`, and broadcasts the transaction to create a DOB cell on the local devnet.
   * **Part 2 (Verify)**: Query the live DOB cell directly from CKB JSON-RPC, extract the binary payload using the `unpackToRawSporeData` decoder, and assert content equivalence.
 

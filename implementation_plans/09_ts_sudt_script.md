@@ -109,7 +109,7 @@ if (input_sum < output_sum) return ERROR_AMOUNT;
 ## Project Structure
 
 ```
-projects/ts-sudt/
+projects/09_ts_sudt_script/
     ├── package.json
     ├── tsconfig.json
     ├── src/

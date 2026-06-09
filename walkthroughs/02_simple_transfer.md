@@ -7,10 +7,10 @@ We have successfully created and executed the Simple Transfer project. This proj
 ## Codebase Additions
 
 We created the following files inside the project directory:
-* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/simple-transfer/package.json): Handles dependencies including the `@ckb-ccc/core` SDK.
-* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/simple-transfer/tsconfig.json): TypeScript compilation specs.
-* [system-scripts.json](file:///Users/nghiadang/CKB/ckb_journey/projects/simple-transfer/system-scripts.json): Local devnet configuration for resolving SECP256K1 cell dependency scripts.
-* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/simple-transfer/src/index.ts): The main transfer runner:
+* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/02_simple_transfer/package.json): Handles dependencies including the `@ckb-ccc/core` SDK.
+* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/02_simple_transfer/tsconfig.json): TypeScript compilation specs.
+* [system-scripts.json](file:///Users/nghiadang/CKB/ckb_journey/projects/02_simple_transfer/system-scripts.json): Local devnet configuration for resolving SECP256K1 cell dependency scripts.
+* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/02_simple_transfer/src/index.ts): The main transfer runner:
   * Part 1: Connects to the local devnet node and queries initial sender/receiver CKB balances.
   * Part 2: Sets up a cryptographic signer using pre-funded devnet private keys.
   * Part 3: Allocates a new transaction structure with an output cell targeting the receiver with 500 CKB.

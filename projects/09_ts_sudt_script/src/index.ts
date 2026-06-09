@@ -10,7 +10,7 @@
  * allowing the issuer to mint new tokens.
  *
  * HOW TO BUILD AND RUN:
- * 1. cd ckb_journey/projects/ts-sudt
+ * 1. cd ckb_journey/projects/09_ts_sudt_script
  * 2. npm install
  * 3. npm run build    (TypeScript -> JS -> .bc bytecode)
  * 4. npm start        (runs in ckb-debugger CKB-VM emulator)

@@ -7,9 +7,9 @@ We have successfully created and executed the on-chain TypeScript Hello World co
 ## Codebase Additions
 
 We created the following files inside the project directory:
-* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/ts-hello-world/package.json): Handles dependencies (like `@ckb-js-std/bindings` and `esbuild`), build configurations, and emulator running scripts.
-* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/ts-hello-world/tsconfig.json) / [tsconfig.base.json](file:///Users/nghiadang/CKB/ckb_journey/projects/ts-hello-world/tsconfig.base.json): Configures TypeScript settings targeting modern Javascript suitable for the QuickJS engine.
-* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/ts-hello-world/src/index.ts): The custom on-chain contract source code:
+* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/08_ts_hello_world_script/package.json): Handles dependencies (like `@ckb-js-std/bindings` and `esbuild`), build configurations, and emulator running scripts.
+* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/08_ts_hello_world_script/tsconfig.json) / [tsconfig.base.json](file:///Users/nghiadang/CKB/ckb_journey/projects/08_ts_hello_world_script/tsconfig.base.json): Configures TypeScript settings targeting modern Javascript suitable for the QuickJS engine.
+* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/08_ts_hello_world_script/src/index.ts): The custom on-chain contract source code:
   * Exposes a `main()` function returning `0` for success.
   * Uses `bindings.exit()` to terminate execution and return the status code directly to the CKB-VM kernel.
 

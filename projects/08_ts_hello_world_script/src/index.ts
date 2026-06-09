@@ -6,7 +6,7 @@
  * Non-zero exit = transaction is rejected.
  *
  * HOW TO BUILD AND RUN:
- * 1. cd ckb_journey/projects/ts-hello-world
+ * 1. cd ckb_journey/projects/08_ts_hello_world_script
  * 2. pnpm install
  * 3. pnpm build      (TypeScript -> JS -> .bc bytecode)
  * 4. pnpm start      (runs in ckb-debugger CKB-VM emulator)

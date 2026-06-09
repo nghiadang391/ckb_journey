@@ -41,7 +41,7 @@ CKB scripts run in a **bare-metal RISC-V** environment with:
 > When we disable the A-extension via `RUSTFLAGS="-C target-feature=-a"`, the LLVM backend fails to compile the `bytes` crate, yielding a `Cannot select: AtomicLoadAdd` error.
 > 
 > To resolve this, we:
-> 1. Patched the `bytes` crate locally in `projects/rust-sudt/bytes-patch`.
+> 1. Patched the `bytes` crate locally in `projects/10_rust_sudt_script/bytes-patch`.
 > 2. Replaced standard atomic types (`AtomicUsize`, `AtomicPtr`) in `bytes-patch/src/loom.rs` with custom single-threaded wrappers using `UnsafeCell`.
 > 3. Overrode the `bytes` dependency in workspace `Cargo.toml` with `[patch.crates-io]`.
 
@@ -76,7 +76,7 @@ npm test
 ## Project Structure
 
 ```
-projects/rust-sudt/
+projects/10_rust_sudt_script/
     ├── Cargo.toml             # Workspace Cargo config with [patch.crates-io]
     ├── Makefile               # Build orchestrator (specifies target features)
     ├── bytes-patch/           # Patched bytes crate using non-atomic wrappers

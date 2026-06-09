@@ -66,7 +66,7 @@ bindings.exit(main());
 ## Project Structure
 
 ```
-projects/ts-hello-world/
+projects/08_ts_hello_world_script/
     ├── package.json
     ├── tsconfig.json
     ├── src/

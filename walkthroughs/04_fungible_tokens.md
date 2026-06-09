@@ -7,10 +7,10 @@ We have successfully created and executed the Fungible Tokens project. This proj
 ## Codebase Additions
 
 We created the following files inside the project directory:
-* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/fungible-tokens/package.json): Project specifications.
-* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/fungible-tokens/tsconfig.json): TypeScript specifications.
-* [system-scripts.json](file:///Users/nghiadang/CKB/ckb_journey/projects/fungible-tokens/system-scripts.json): Ref scripts.
-* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/fungible-tokens/src/index.ts): The main token operations runner:
+* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/04_fungible_tokens/package.json): Project specifications.
+* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/04_fungible_tokens/tsconfig.json): TypeScript specifications.
+* [system-scripts.json](file:///Users/nghiadang/CKB/ckb_journey/projects/04_fungible_tokens/system-scripts.json): Ref scripts.
+* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/04_fungible_tokens/src/index.ts): The main token operations runner:
   * Part 1 (xUDT): Computes unique xUDT script arguments, mints a total supply of 1,000,000 tokens to the issuer, and executes a transfer of 250,000 tokens to a receiver address.
   * Part 2 (Branding): Packages and serializes metadata (decimals: 8, symbol: xNGOCVO, name: Ngoc's Extensible Token) into standard binary cells locked to the issuer address to register standard brand identification.
 

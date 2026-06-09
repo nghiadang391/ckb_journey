@@ -34,17 +34,17 @@ Molecule supports the following layouts:
 
 ## Proposed Changes
 
-We will create a new learning project under `ckb_journey/projects/molecule-serialization/` containing standard configuration and a clean, telemetry-style main runner.
+We will create a new learning project under `ckb_journey/projects/06_molecule_serialization/` containing standard configuration and a clean, telemetry-style main runner.
 
 ### Component: Molecule Serialization Project
 
-#### [NEW] [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/molecule-serialization/package.json)
+#### [NEW] [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/06_molecule_serialization/package.json)
 Provides project meta-information and loads the `@ckb-ccc/shell` dependency to support Molecule codecs.
 
-#### [NEW] [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/molecule-serialization/tsconfig.json)
+#### [NEW] [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/06_molecule_serialization/tsconfig.json)
 Configures TypeScript with decorator support (`experimentalDecorators` and `emitDecoratorMetadata`) to allow using the `Entity` class codecs.
 
-#### [NEW] [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/molecule-serialization/src/index.ts)
+#### [NEW] [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/06_molecule_serialization/src/index.ts)
 A structured script demonstrating both:
 1. **Basic primitives** (Bytes, Byte16, Uint8, Uint128LE).
 2. **Composite schemas** (creating and decoding dynamic structs, tables, options, and unions).
@@ -56,7 +56,7 @@ A structured script demonstrating both:
 
 ### Manual Verification
 1. Navigate to the new project directory:
-   `cd ckb_journey/projects/molecule-serialization`
+   `cd ckb_journey/projects/06_molecule_serialization`
 2. Install the workspace dependencies:
    `npm install`
 3. Run the script:

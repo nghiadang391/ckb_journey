@@ -14,17 +14,17 @@ In CKB, because the cell model acts as a direct, distributed global memory pool 
 
 ## Proposed Changes
 
-We will create a new project under `ckb_journey/projects/create-spore-dob/` that compiles and runs a clean, telemetry-style CLI runner.
+We will create a new project under `ckb_journey/projects/07_create_spore_dob/` that compiles and runs a clean, telemetry-style CLI runner.
 
 ### Component: Spore DOB Project
 
-#### [NEW] [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/create-spore-dob/package.json)
+#### [NEW] [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/07_create_spore_dob/package.json)
 Establishes project specifications and loads dependencies: `@spore-sdk/core`, `@ckb-ccc/core`, and typical developmental scripts.
 
-#### [NEW] [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/create-spore-dob/tsconfig.json)
+#### [NEW] [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/07_create_spore_dob/tsconfig.json)
 Configures TypeScript module paths.
 
-#### [NEW] [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/create-spore-dob/src/index.ts)
+#### [NEW] [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/07_create_spore_dob/src/index.ts)
 Our main runner script which will perform:
 1. **Part 1 (Mint)**: Reads a sample asset file from the local disk, builds the Spore skeleton with `@spore-sdk/core`, and broadcasts the transaction to create a DOB cell on the local devnet.
 2. **Part 2 (Verify)**: Query the live DOB cell directly from CKB JSON-RPC, extract the binary payload using the `unpackToRawSporeData` decoder, and assert content equivalence.
@@ -35,7 +35,7 @@ Our main runner script which will perform:
 
 ### Manual Verification
 1. Navigate to the new project directory:
-   `cd ckb_journey/projects/create-spore-dob`
+   `cd ckb_journey/projects/07_create_spore_dob`
 2. Install workspace dependencies:
    `npm install`
 3. Run the script:

@@ -7,14 +7,14 @@ We have successfully created, compiled, and executed the on-chain TypeScript Sim
 ## Codebase Additions
 
 We created and configured the following files in the project directory:
-* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/ts-sudt/package.json): Defines build and run scripts using `tsc`, `esbuild`, Jest (`npm test`), and `offckb debugger`.
-* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/ts-sudt/tsconfig.json) / [tsconfig.base.json](file:///Users/nghiadang/CKB/ckb_journey/projects/ts-sudt/tsconfig.base.json): Handles TypeScript configurations.
-* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/ts-sudt/src/index.ts): The type script implementation:
+* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/09_ts_sudt_script/package.json): Defines build and run scripts using `tsc`, `esbuild`, Jest (`npm test`), and `offckb debugger`.
+* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/09_ts_sudt_script/tsconfig.json) / [tsconfig.base.json](file:///Users/nghiadang/CKB/ckb_journey/projects/09_ts_sudt_script/tsconfig.base.json): Handles TypeScript configurations.
+* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/09_ts_sudt_script/src/index.ts): The type script implementation:
   * **Args Processing**: Slices off the 35-byte host engine header to retrieve the 32-byte owner lock hash.
   * **Owner Mode Detection**: Iterates through input cells using `QueryIter` and `loadCellLockHash` to check if the transaction is signed by the token owner. If so, skips conservation checks.
   * **Conservation Rule**: If not in owner mode, sums input and output token amounts (represented as u128 values in the first 16 bytes of cell data) and enforces `sum(inputs) >= sum(outputs)`.
-* [generate-mock-tx.cjs](file:///Users/nghiadang/CKB/ckb_journey/projects/ts-sudt/generate-mock-tx.cjs) / [mock_tx.json](file:///Users/nghiadang/CKB/ckb_journey/projects/ts-sudt/mock_tx.json): Code and exported transaction JSON containing mock inputs, outputs, lock scripts, and type script properties.
-* [jest.config.cjs](file:///Users/nghiadang/CKB/ckb_journey/projects/ts-sudt/jest.config.cjs) / [src/misc.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/ts-sudt/src/misc.ts) / [src/sudt.test.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/ts-sudt/src/sudt.test.ts): Unit tests and helper modules validating token transfers under simulated CKB-VM contexts.
+* [generate-mock-tx.cjs](file:///Users/nghiadang/CKB/ckb_journey/projects/09_ts_sudt_script/generate-mock-tx.cjs) / [mock_tx.json](file:///Users/nghiadang/CKB/ckb_journey/projects/09_ts_sudt_script/mock_tx.json): Code and exported transaction JSON containing mock inputs, outputs, lock scripts, and type script properties.
+* [jest.config.cjs](file:///Users/nghiadang/CKB/ckb_journey/projects/09_ts_sudt_script/jest.config.cjs) / [src/misc.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/09_ts_sudt_script/src/misc.ts) / [src/sudt.test.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/09_ts_sudt_script/src/sudt.test.ts): Unit tests and helper modules validating token transfers under simulated CKB-VM contexts.
 
 ---
 

@@ -38,11 +38,11 @@ To make the token recognizable by on-chain browsers and wallets, we will create 
 ### Project Setup
 
 #### [NEW] package.json
-- Located at `ckb_journey/projects/fungible-tokens/package.json`
+- Located at `ckb_journey/projects/04_fungible_tokens/package.json`
 - Similar to Lesson 3, with dependency `@ckb-ccc/core`, `tsx`, and `typescript`.
 
 #### [NEW] tsconfig.json
-- Located at `ckb_journey/projects/fungible-tokens/tsconfig.json`
+- Located at `ckb_journey/projects/04_fungible_tokens/tsconfig.json`
 - Identical TypeScript compiler config.
 
 #### [COPY] system-scripts.json

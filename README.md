@@ -62,15 +62,15 @@ CKB/
 │   ├── walkthroughs/             # Walkthrough guides and transaction logs
 │   │   └── logs/
 │   └── projects/                 # Hands-on dApp and script projects
-│       ├── simple-transfer/      # Lesson 02: Transfer CKB between accounts
-│       ├── store-data/           # Lesson 03: Store data on a Cell
-│       ├── fungible-tokens/      # Lesson 04: Create custom xUDT assets
-│       ├── simple-lock/          # Lesson 05: Cryptographic custom lock script
-│       ├── molecule-serialization/ # Lesson 06: Molecule codecs and entities
-│       ├── create-spore-dob/     # Lesson 07: Mint Spore digital objects (DOBs)
-│       ├── ts-hello-world/       # Lesson 08: TypeScript smart contract (ckb-js-vm)
-│       ├── ts-sudt/              # Lesson 09: TypeScript sUDT contract (ckb-js-vm)
-│       └── rust-sudt/            # Lesson 10: On-Chain Rust sUDT contract (RISC-V)
+│       ├── 02_simple_transfer/   # Lesson 02: Transfer CKB between accounts
+│       ├── 03_store_data_on_cell/ # Lesson 03: Store data on a Cell
+│       ├── 04_fungible_tokens/   # Lesson 04: Create custom xUDT assets
+│       ├── 05_simple_lock/       # Lesson 05: Cryptographic custom lock script
+│       ├── 06_molecule_serialization/ # Lesson 06: Molecule codecs and entities
+│       ├── 07_create_spore_dob/  # Lesson 07: Mint Spore digital objects (DOBs)
+│       ├── 08_ts_hello_world_script/ # Lesson 08: TypeScript smart contract (ckb-js-vm)
+│       ├── 09_ts_sudt_script/    # Lesson 09: TypeScript sUDT contract (ckb-js-vm)
+│       └── 10_rust_sudt_script/  # Lesson 10: On-Chain Rust sUDT contract (RISC-V)
 ```
 
 ---

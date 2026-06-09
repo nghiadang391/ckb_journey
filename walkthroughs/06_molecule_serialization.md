@@ -7,9 +7,9 @@ We have successfully created and executed the Molecule Serialization project. Th
 ## Codebase Additions
 
 We created the following files inside the new project directory:
-* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/molecule-serialization/package.json): Project dependencies including `@ckb-ccc/shell` and `tsx` watched execution.
-* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/molecule-serialization/tsconfig.json): TypeScript compilation specs with decorator metadata processing enabled.
-* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/molecule-serialization/src/index.ts): The Molecule serialization and decoding exercise:
+* [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/06_molecule_serialization/package.json): Project dependencies including `@ckb-ccc/shell` and `tsx` watched execution.
+* [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/06_molecule_serialization/tsconfig.json): TypeScript compilation specs with decorator metadata processing enabled.
+* [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/06_molecule_serialization/src/index.ts): The Molecule serialization and decoding exercise:
   * **Part 1 (Primitives)**: Encodes and decodes standard CKB Uint8 and Uint128LE numbers.
   * **Part 2 (Structs)**: Packs a fixed-layout Attributes struct exactly mirroring bare-metal C packed structures.
   * **Part 3 (Class Entities)**: Annotates a HeroEntity class using `@mol.codec(HeroCodec)` to support automated `fromBytes` and `toBytes` serialization pipelines with custom helper logic.

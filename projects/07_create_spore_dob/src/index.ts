@@ -5,7 +5,7 @@
  * the transaction on the local devnet, and queries it back via CKB JSON-RPC to verify content.
  * 
  * HOW TO RUN IT:
- * 1. cd ckb_journey/projects/create-spore-dob
+ * 1. cd ckb_journey/projects/07_create_spore_dob
  * 2. npm install
  * 3. NETWORK=devnet npm start
  * 
