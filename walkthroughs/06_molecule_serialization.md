@@ -1,12 +1,12 @@
 # Walkthrough — Lesson 06: Molecule Serialization (ccc-molecule)
 
-We have successfully created and executed the Molecule Serialization project. This lesson demonstrates both primitive codecs and advanced class entity decorators using the `@ckb-ccc/shell` module.
+The Molecule Serialization project was successfully created and executed. This lesson demonstrates both primitive codecs and advanced class entity decorators using the `@ckb-ccc/shell` module.
 
 ---
 
 ## Codebase Additions
 
-We created the following files inside the new project directory:
+The following files were created inside the new project directory:
 * [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/06_molecule_serialization/package.json): Project dependencies including `@ckb-ccc/shell` and `tsx` watched execution.
 * [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/06_molecule_serialization/tsconfig.json): TypeScript compilation specs with decorator metadata processing enabled.
 * [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/06_molecule_serialization/src/index.ts): The Molecule serialization and decoding exercise:
@@ -18,7 +18,7 @@ We created the following files inside the new project directory:
 
 ## Verification Results
 
-Our script executed successfully and printed high-fidelity telemetry logs:
+The script executed successfully and printed high-fidelity telemetry logs:
 
 1. **Part 1 (Primitives)**:
    * Uint8 original value (42) serialized to `0x2a` (1 byte) and successfully decoded back to 42.

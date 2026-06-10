@@ -1,12 +1,12 @@
 # Walkthrough — Lesson 04: Fungible Tokens (xUDT) & Metadata
 
-We have successfully created and executed the Fungible Tokens project. This project mints a custom token supply using the xUDT standard, manages token transfers, and registers standard branded metadata on-chain.
+The Fungible Tokens project was successfully created and executed. This project mints a custom token supply using the xUDT standard, manages token transfers, and registers standard branded metadata on-chain.
 
 ---
 
 ## Codebase Additions
 
-We created the following files inside the project directory:
+The following files were created inside the project directory:
 * [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/04_fungible_tokens/package.json): Project specifications.
 * [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/04_fungible_tokens/tsconfig.json): TypeScript specifications.
 * [system-scripts.json](file:///Users/nghiadang/CKB/ckb_journey/projects/04_fungible_tokens/system-scripts.json): Ref scripts.
@@ -18,7 +18,7 @@ We created the following files inside the project directory:
 
 ## Verification Results
 
-Our script executed successfully on the public Testnet:
+The script executed successfully on the public Testnet:
 
 1. **xUDT Mint & Query**:
    * Minted core token supply successfully.

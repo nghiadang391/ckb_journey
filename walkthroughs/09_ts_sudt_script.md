@@ -1,12 +1,12 @@
 # Walkthrough — Lesson 09: On-Chain TypeScript Script — Simple UDT (ts-sudt)
 
-We have successfully created, compiled, and executed the on-chain TypeScript Simple UDT (sUDT) type script. This lesson implements the core validation rules of the sUDT token standard (RFC-0025) running inside the CKB-VM emulator via `ckb-js-vm`.
+The on-chain TypeScript Simple UDT (sUDT) type script was successfully created, compiled, and executed. This lesson implements the core validation rules of the sUDT token standard (RFC-0025) running inside the CKB-VM emulator via `ckb-js-vm`.
 
 ---
 
 ## Codebase Additions
 
-We created and configured the following files in the project directory:
+The following files were created and configured in the project directory:
 * [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/09_ts_sudt_script/package.json): Defines build and run scripts using `tsc`, `esbuild`, Jest (`npm test`), and `offckb debugger`.
 * [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/09_ts_sudt_script/tsconfig.json) / [tsconfig.base.json](file:///Users/nghiadang/CKB/ckb_journey/projects/09_ts_sudt_script/tsconfig.base.json): Handles TypeScript configurations.
 * [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/09_ts_sudt_script/src/index.ts): The type script implementation:
@@ -20,14 +20,14 @@ We created and configured the following files in the project directory:
 
 ## Verification Results
 
-We verified the compilation and execution logic:
+Verification of the compilation and execution logic was completed:
 
 1. **Compilation & Bytecode Generation (`npm run build`)**:
    * TypeScript files compiled cleanly and bundled into `dist/index.js` via `esbuild`.
    * The bundled Javascript was successfully compiled into CKB-VM bytecode `dist/index.bc` via `ckb-debugger`.
 
 2. **Standalone Execution inside CKB-VM Emulator with Transaction Context (`npm start`)**:
-   * We generated a mock transaction (`mock_tx.json`) with input = 100 and output = 90.
+   * A mock transaction (`mock_tx.json`) was generated with input = 100 and output = 90.
    * Running `npm start` loads this transaction, validates it, prints telemetry logs, and exits with code `0` (Success):
      ```
      Script log: Run from file, local access enabled. For Testing only.

@@ -1,0 +1,41 @@
+===========================================================================
+=== STARTING LESSON 11: Nervos DAO Interaction on Devnet ===
+===========================================================================
+[INFO] Connected to CKB Devnet node. Current Tip Block: 15213
+
+===========================================================================
+[START] Step 1: Depositing 200 CKB into Nervos DAO...
+===========================================================================
+[TX] Deposit transaction broadcasted! Hash: 0x2adc4accd0988dfb4610d5643d44626e2a0584c84ae0761328ce1727f6f1e2a0
+[INFO] Waiting for transaction to commit...
+[SUCCESS] Step 1 completed: Deposit cell created.
+
+[INFO] Deposit committed in Block: #15445
+
+===========================================================================
+[START] Step 2: Requesting withdrawal (Preparing DAO cell)...
+===========================================================================
+[TX] Prepare transaction broadcasted! Hash: 0xdf0a13c102a27b4599c311b2eae8e300356a5e6539f5e5805302a36665fa447
+[INFO] Waiting for transaction to commit...
+[SUCCESS] Step 2 completed: Cell is now in withdrawing state.
+
+[INFO] Preparation committed in Block: #15448
+
+===========================================================================
+[START] Step 3: Preparing Claim transaction and interest computation...
+===========================================================================
+[INFO] Deposit Epoch:   902500000
+[INFO] Withdraw Epoch:  902666666
+[INFO] Maturity Epoch (Unlockable at): 18902500000
+[INFO] Profitable Base capacity: 199.99999931 CKB
+[INFO] Earned interest profit:   2207.85088248 CKB
+
+[INFO] Constructing final Claim / Unlock transaction structure...
+   Claim Transaction assembled successfully!
+   Inputs OutPoint:  0xdf0a13c102a27b4599c311b2eae8e300356a5e6539f5e5805302a36665fa7a47
+   Since value:      "2307822130898665661"
+   Target Output Cap: 2407.8508778 CKB (Includes 2207.85088248 CKB interest)
+
+[INFO] Note: In a production testnet environment, we must wait 180 epochs (~30 days) before broadcasting this transaction.
+[SUCCESS] Nervos DAO lifecycle execution plan successfully verified!
+===========================================================================

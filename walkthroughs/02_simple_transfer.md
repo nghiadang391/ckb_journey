@@ -1,12 +1,12 @@
 # Walkthrough — Lesson 02: Simple CKB Transfer
 
-We have successfully created and executed the Simple Transfer project. This project implements a CKB transaction that destroys existing input cells and allocates a new cell containing 500 CKB to a receiver address.
+The Simple Transfer project was successfully created and executed. This project implements a CKB transaction that destroys existing input cells and allocates a new cell containing 500 CKB to a receiver address.
 
 ---
 
 ## Codebase Additions
 
-We created the following files inside the project directory:
+The following files were created inside the project directory:
 * [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/02_simple_transfer/package.json): Handles dependencies including the `@ckb-ccc/core` SDK.
 * [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/02_simple_transfer/tsconfig.json): TypeScript compilation specs.
 * [system-scripts.json](file:///Users/nghiadang/CKB/ckb_journey/projects/02_simple_transfer/system-scripts.json): Local devnet configuration for resolving SECP256K1 cell dependency scripts.
@@ -21,7 +21,7 @@ We created the following files inside the project directory:
 
 ## Verification Results
 
-Our script executed successfully on the local CKB Devnet node:
+The script executed successfully on the local CKB Devnet node:
 
 1. **Initial State Check**:
    * Confirmed connection to local blockchain node.

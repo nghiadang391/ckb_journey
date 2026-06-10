@@ -20,17 +20,17 @@ For an embedded engineer, the **Nervos DAO** is analogous to a **Hardware Securi
 
 ## Proposed Changes
 
-We will create a new project at `ckb_journey/projects/nervos-dao/` with a CLI script.
+We will create a new project at `ckb_journey/projects/11_nervos_dao/` with a CLI script.
 
 ### Component: Nervos DAO Project
 
-#### [NEW] [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/nervos-dao/package.json)
+#### [NEW] [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/11_nervos_dao/package.json)
 Standard node package specifications loading `@ckb-ccc/core`, `typescript`, `ts-node`, and configuration tools.
 
-#### [NEW] [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/nervos-dao/tsconfig.json)
+#### [NEW] [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/11_nervos_dao/tsconfig.json)
 Configures TypeScript compilation options.
 
-#### [NEW] [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/nervos-dao/src/index.ts)
+#### [NEW] [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/11_nervos_dao/src/index.ts)
 The main executable containing:
 - **Part 1 (Deposit)**: Locks CKB into the Nervos DAO.
 - **Part 2 (Prepare/Withdrawal Request)**: Submits a transaction converting the deposit cell to a withdrawing cell.
@@ -43,7 +43,7 @@ The main executable containing:
 ### Manual Verification
 1. Navigate to the new project directory:
    ```bash
-   cd ckb_journey/projects/nervos-dao
+   cd ckb_journey/projects/11_nervos_dao
    ```
 2. Install workspace dependencies:
    ```bash

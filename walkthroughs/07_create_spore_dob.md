@@ -1,12 +1,12 @@
 # Walkthrough — Lesson 07: Spore DOB Creation (create-dob)
 
-We have successfully created and executed the Spore DOB Creation project. This lesson demonstrates how to mint persistent binary payloads natively inside cells on-chain and retrieve/verify them.
+The Spore DOB Creation project was successfully created and executed. This lesson demonstrates how to mint persistent binary payloads natively inside cells on-chain and retrieve/verify them.
 
 ---
 
 ## Codebase Additions
 
-We created the following files inside the new project directory:
+The following files were created inside the new project directory:
 * [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/07_create_spore_dob/package.json): Project dependencies including `@spore-sdk/core` and CLI scripts.
 * [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/07_create_spore_dob/tsconfig.json): TypeScript compilation specs.
 * [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/07_create_spore_dob/src/index.ts): The Spore minting and verification script:
@@ -17,7 +17,7 @@ We created the following files inside the new project directory:
 
 ## Verification Results
 
-Our script executed successfully and printed high-fidelity telemetry logs:
+The script executed successfully and printed high-fidelity telemetry logs:
 
 1. **Part 1 (Mint)**:
    * Instantiated private keys and checked native CKB balances.

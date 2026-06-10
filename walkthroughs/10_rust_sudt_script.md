@@ -1,6 +1,6 @@
- # Lesson 10: On-Chain Rust Script — sUDT Script in Rust
+# Lesson 10: On-Chain Rust Script — sUDT Script in Rust
 
-We successfully built, compiled, and verified the **On-Chain Rust sUDT Script** for CKB. By patching the `bytes` dependency crate with a custom non-atomic implementation, we successfully resolved LLVM instruction selection errors under `target-feature=-a`.
+The **On-Chain Rust sUDT Script** for CKB was successfully built, compiled, and verified. By patching the `bytes` dependency crate with a custom non-atomic implementation, LLVM instruction selection errors under `target-feature=-a` were successfully resolved.
 
 ---
 
@@ -8,22 +8,22 @@ We successfully built, compiled, and verified the **On-Chain Rust sUDT Script** 
 
 Prior to this lesson, I had no prior experience with **Rust** or **Cargo**. Through this exercise, I learned:
 - **Rust**: A systems programming language focusing on safety, concurrency, and speed. It allows us to write memory-safe code without a garbage collector (`no_std` environments), making it the perfect choice for writing secure, audited, and resource-constrained blockchain smart contracts.
-- **Cargo**: Rust's build system and package manager. It automates fetching dependencies, compiling code, and packaging libraries (crates) for our compilation target.
+- **Cargo**: Rust's build system and package manager. It automates fetching dependencies, compiling code, and packaging libraries (crates) for the target compilation architecture.
 
 ---
 
 ## New Tools & Packages Installed
 
-To cross-compile and link Rust code to the RISC-V CKB-VM architecture on macOS, we installed and used the following tools:
+To cross-compile and link Rust code to the RISC-V CKB-VM architecture on macOS, the following tools were installed and utilized:
 
 1. **Rust Target: `riscv64imac-unknown-none-elf`**:
-   - *Introduction*: By default, Rust compiles binaries for the host machine (e.g., Apple Silicon M-series chips). We added this cross-compilation target so the compiler knows how to generate bare-metal RISC-V 64-bit ELF binaries compatible with the CKB-VM.
+   - *Introduction*: By default, Rust compiles binaries for the host machine (e.g., Apple Silicon M-series chips). The target was added so the compiler knows how to generate bare-metal RISC-V 64-bit ELF binaries compatible with the CKB-VM.
    
 2. **GCC Toolchain: `riscv64-elf-gcc`**:
    - *Introduction*: A cross-compiler toolchain installed via Homebrew. It provides the necessary GNU linker and compiler tools to link C-based dependencies of crates (like `ckb-std`) when compiling for RISC-V targets.
 
 3. **CKB Syscall Bindings: `ckb-std`**:
-   - *Introduction*: A Rust library (crate) containing low-level syscall wrappers and high-level helper utilities. It allows our contract to communicate directly with the CKB-VM to load transaction inputs/outputs, cell data, and script configurations.
+   - *Introduction*: A Rust library (crate) containing low-level syscall wrappers and high-level helper utilities. It allows the contract to communicate directly with the CKB-VM to load transaction inputs/outputs, cell data, and script configurations.
 
 ---
 
@@ -32,7 +32,7 @@ To cross-compile and link Rust code to the RISC-V CKB-VM architecture on macOS, 
 1. **Atomics and CKB-VM compatibility**:
    - CKB-VM is single-threaded and does not support the RISC-V "A" (atomic memory operations) extension.
    - The `bytes` crate (a dependency of `molecule` and `ckb-std`) uses `AtomicUsize` for reference counting, causing LLVM compilation crashes when the `A` extension is disabled.
-   - We patched `bytes` with a local implementation (`bytes-patch`) that maps atomic types like `AtomicUsize` and `AtomicPtr` directly to single-threaded `UnsafeCell` operations. This resolved the compiler error and allowed safe cross-compilation to `riscv64imac-unknown-none-elf` without generating atomic instruction sets.
+   - The `bytes` dependency was patched with a local implementation (`bytes-patch`) that maps atomic types like `AtomicUsize` and `AtomicPtr` directly to single-threaded `UnsafeCell` operations. This resolved the compiler error and allowed safe cross-compilation to `riscv64imac-unknown-none-elf` without generating atomic instruction sets.
 
 2. **Cycle Optimization**:
    - Rust compiled directly to RISC-V ELF runs with zero VM overhead (no JavaScript virtual machine interpreter).

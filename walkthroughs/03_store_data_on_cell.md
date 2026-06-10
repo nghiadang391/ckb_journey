@@ -1,12 +1,12 @@
 # Walkthrough — Lesson 03: Store Data on Cell
 
-We have successfully created and executed the Store Data project. This project implements writing an arbitrary text message directly into a cell's data field and then reading it back natively from the blockchain.
+The Store Data project was successfully created and executed. This project implements writing an arbitrary text message directly into a cell's data field and then reading it back natively from the blockchain.
 
 ---
 
 ## Codebase Additions
 
-We created the following files inside the project directory:
+The following files were created inside the project directory:
 * [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/03_store_data_on_cell/package.json): Standard runner configurations.
 * [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/03_store_data_on_cell/tsconfig.json): TypeScript configuration specifications.
 * [system-scripts.json](file:///Users/nghiadang/CKB/ckb_journey/projects/03_store_data_on_cell/system-scripts.json): Ref system scripts.
@@ -19,7 +19,7 @@ We created the following files inside the project directory:
 
 ## Verification Results
 
-Our script executed successfully on the network:
+The script executed successfully on the network:
 
 1. **Transaction Broadcast**:
    * Text message converted to hex representation.

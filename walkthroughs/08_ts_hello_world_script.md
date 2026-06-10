@@ -1,12 +1,12 @@
 # Walkthrough — Lesson 08: On-Chain TypeScript Script — Hello World (ts-hello-world)
 
-We have successfully created and executed the on-chain TypeScript Hello World contract. This lesson demonstrates how to construct, bundle, and run custom validation logic inside the CKB-VM emulator using TypeScript and the QuickJS VM engine (`ckb-js-vm`).
+The on-chain TypeScript Hello World contract was successfully created and executed. This lesson demonstrates how to construct, bundle, and run custom validation logic inside the CKB-VM emulator using TypeScript and the QuickJS VM engine (`ckb-js-vm`).
 
 ---
 
 ## Codebase Additions
 
-We created the following files inside the project directory:
+The following files were created inside the project directory:
 * [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/08_ts_hello_world_script/package.json): Handles dependencies (like `@ckb-js-std/bindings` and `esbuild`), build configurations, and emulator running scripts.
 * [tsconfig.json](file:///Users/nghiadang/CKB/ckb_journey/projects/08_ts_hello_world_script/tsconfig.json) / [tsconfig.base.json](file:///Users/nghiadang/CKB/ckb_journey/projects/08_ts_hello_world_script/tsconfig.base.json): Configures TypeScript settings targeting modern Javascript suitable for the QuickJS engine.
 * [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/08_ts_hello_world_script/src/index.ts): The custom on-chain contract source code:
@@ -17,7 +17,7 @@ We created the following files inside the project directory:
 
 ## Verification Results
 
-We verified the build pipeline and contract execution locally:
+Verification of the build pipeline and contract execution was completed locally:
 
 1. **Compilation & Bytecode Generation (`npm run build`)**:
    * TypeScript is compiled and bundled into a single JavaScript file (`dist/index.js`).
