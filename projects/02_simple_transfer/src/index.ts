@@ -117,7 +117,7 @@ async function main() {
 
   console.log("[INFO] Calculating and adding transaction gas/byte fees...");
   // Automatically calculate the required transaction fee and subtract it from the change cell
-  await tx.completeFeeBy(senderSigner, 1000n); // 1000 shannons per byte fee rate
+  await tx.completeFeeBy(senderSigner, 1000n); // 1000 shannons/KB fee rate (1 shannon/byte)
 
   // 6. Sign and broadcast transaction to Devnet pool
   console.log("[INFO] Signing transaction inputs with Sender private key...");

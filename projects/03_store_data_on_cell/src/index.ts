@@ -118,7 +118,7 @@ async function main() {
 
   console.log("🔄 Assembling inputs and calculating transaction fees...");
   await tx.completeInputsByCapacity(signer);
-  await tx.completeFeeBy(signer, 1000n); // 1000 shannons/byte fee rate
+  await tx.completeFeeBy(signer, 1000n); // 1000 shannons/KB fee rate (1 shannon/byte)
 
   console.log("✍️ Signing and broadcasting transaction...");
   const txHash = await signer.sendTransaction(tx);

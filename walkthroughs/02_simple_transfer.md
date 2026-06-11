@@ -29,7 +29,7 @@ The script executed successfully on the local CKB Devnet node:
    * Verified sender balance was sufficient to cover 500 CKB plus transaction fee.
 
 2. **Transaction Broadcast**:
-   * Gathered UTXO inputs and computed gas fee using standard 1000 shannons/byte fee rate.
+   * Gathered UTXO inputs and computed gas fee using standard 1000 shannons/KB (1 shannon/byte) fee rate.
    * Transaction broadcasted and successfully committed into a block.
    * Telemetry logged the exact transaction hash representing the state transition on-chain.
 
