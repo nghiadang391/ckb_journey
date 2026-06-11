@@ -7,7 +7,7 @@
 *   **Key Highlights & Code Assets:**
     *   Learned to load private keys and initiate signers using the CCC SDK.
     *   Understood **UTXO matching**—the transaction builder automatically gathers inputs (like harvesting free memory blocks) and returns the unused portion to a change cell.
-    *   Enforced the baseline transaction fee rate: `1000 shannons/byte`.
+    *   Enforced the baseline transaction fee rate: `1000 shannons/KB` (1 shannon/byte).
     *   Files: [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/02_simple_transfer/src/index.ts) | [system-scripts.json](file:///Users/nghiadang/CKB/ckb_journey/projects/02_simple_transfer/system-scripts.json)
 
 ---
