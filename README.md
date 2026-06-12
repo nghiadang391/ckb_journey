@@ -57,7 +57,8 @@ CKB/
 │   ├── weekly_report/            # Weekly developer reports
 │   │   ├── 1st_week/
 │   │   ├── 2nd_week/
-│   │   └── 3rd_week/
+│   │   ├── 3rd_week/
+│   │   └── 4th_week/
 │   ├── implementation_plans/     # Implementation plan markdown records
 │   ├── walkthroughs/             # Walkthrough guides and transaction logs
 │   │   └── logs/
@@ -70,7 +71,8 @@ CKB/
 │       ├── 07_create_spore_dob/  # Lesson 07: Mint Spore digital objects (DOBs)
 │       ├── 08_ts_hello_world_script/ # Lesson 08: TypeScript smart contract (ckb-js-vm)
 │       ├── 09_ts_sudt_script/    # Lesson 09: TypeScript sUDT contract (ckb-js-vm)
-│       └── 10_rust_sudt_script/  # Lesson 10: On-Chain Rust sUDT contract (RISC-V)
+│       ├── 10_rust_sudt_script/  # Lesson 10: On-Chain Rust sUDT contract (RISC-V)
+│       └── 11_nervos_dao/        # Lesson 11: Nervos DAO interaction (Deposit/Prepare/Claim)
 ```
 
 ---
