@@ -54,6 +54,7 @@ CKB/
 ├── README.md                     # Overview and progress tracker
 ├── ckb_journey/
 │   ├── README.md                 # Journey-specific log and structures
+│   ├── study_Rust/               # Rust basics study track (analogies & CLI projects)
 │   ├── weekly_report/            # Weekly developer reports
 │   │   ├── 1st_week/
 │   │   ├── 2nd_week/

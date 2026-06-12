@@ -29,10 +29,20 @@
    - Discovered that the `system-scripts.json` file contained stale file paths (from another developer's machine). Regenerated it using `offckb system-scripts -o system-scripts.json` to match the local devnet environment.
    - Learned about the CCC library's silent fallback behavior: `ClientPublicTestnet` silently falls back to the public testnet when the local devnet node is unreachable, which can cause confusing `OutPoint` resolution failures when system script configurations don't match the target network.
 
-5. **Epoch Math and Fixed-Point Arithmetic:**
-   - CKB epochs are represented as 3-element tuples: `[epochNumber, blockIndex, epochLength]`.
-   - Maturity epoch is calculated by rounding up to the next 180-epoch boundary from the deposit epoch.
-   - Interest profit uses fixed-point division on the `ar` (accumulator rate) values extracted from block headers.
+5.  **Epoch Math and Fixed-Point Arithmetic:**
+    - CKB epochs are represented as 3-element tuples: `[epochNumber, blockIndex, epochLength]`.
+    - Maturity epoch is calculated by rounding up to the next 180-epoch boundary from the deposit epoch.
+    - Interest profit uses fixed-point division on the `ar` (accumulator rate) values extracted from block headers.
+
+6.  **Rust Basics (Beginning the Local Crash Course):**
+    - Established a dedicated `study_Rust/` directory to track absolute basics separately from complex blockchain script frameworks.
+    - **Project Manifests vs Makefiles:** Learned that `Cargo.toml` acts as the project manifest (metadata, compilation properties, and dependencies) replacing manual configuration layouts like C `Makefiles`.
+    - **Compilation & Execution CLI Tools:** 
+      - `cargo check` for rapid type-checking and compiler diagnostics without generating executable overhead.
+      - `cargo build` for compiling the final binary artifact under `target/debug/`.
+      - `cargo run` which uses smart file timestamp checks to skip recompilation if no changes exist, and then runs the binary.
+      - Directly running the compiled executable via path commands (e.g. `./target/debug/binary_name`) bypassing Cargo compilation validations.
+    - **Type Safety & Mutability:** Rust enforces strict variable immutability by default. To alter variables or properties, variables must be explicitly defined using the `mut` keyword, encouraging predictable thread safety and memory layout.
 
 ---
 
@@ -41,6 +51,7 @@
 - Successfully implemented and verified the **Nervos DAO lifecycle** (Deposit → Prepare → Claim simulation) on the local `offckb` devnet.
 - Debugged and resolved a `system-scripts.json` path mismatch issue.
 - Verified interest calculation of **2,207.85 CKB** on a 200 CKB deposit (amplified by devnet's accelerated epoch progression).
+- Initialized local Rust workspace packages (`hello_ckb` and `rust_playground` inside `study_Rust/`) for foundational programming practice.
 
 ---
 
