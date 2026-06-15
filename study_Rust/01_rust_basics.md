@@ -34,6 +34,9 @@ Here is what each token means:
 
 Once a project is created, you use these three Cargo CLI commands in your terminal (make sure your terminal is inside the project directory, e.g., `study_Rust/hello_ckb`):
 
+> [!NOTE]
+> **Under the Hood:** While Cargo manages projects and dependencies, it does not compile code directly. When you run `cargo build` or `cargo run`, Cargo executes **`rustc`** (the official Rust Compiler, equivalent to `gcc` or `clang` in C) under the hood to compile your source files into machine code.
+
 1.  **`cargo check`**
     *   *What it does:* Analyzes the code to verify that it compiles (checks types, borrowing, and syntax) but **does not** output a binary file.
     *   *Why use it:* It is much faster than `cargo build` because it skips the code generation phase. Developers run it frequently while writing code to catch syntax and type errors quickly.
@@ -47,23 +50,33 @@ Once a project is created, you use these three Cargo CLI commands in your termin
     *   *Smart Recompilation:* Cargo automatically checks the modification timestamps of your source code files. If no code changes are detected, it skips compilation and immediately launches the existing binary. If changes are detected, it rebuilds only the modified sections (incremental build) before running.
     *   *Why use it:* This is the most common command during testing and active development because it compiles and executes your code in one step.
 
-### Running the Compiled Binary Directly (Without Cargo)
+---
 
-If you have already compiled the project using `cargo build` and want to execute the binary file directly without verifying changes or compiling again, you run it directly from your shell:
+## 6. Memory Management: Can Rust Leak Memory?
 
-```bash
-# From the root of your project directory:
-./target/debug/hello_ckb
+In C/C++, memory leaks occur when heap allocations (`malloc` or `new`) are not paired with a deallocation command (`free` or `delete`).
+
+Rust does **not** have a garbage collector, but it prevents memory leaks through **compile-time ownership scopes**.
+
+### Automatic Deallocation (RAII)
+When a variable that owns heap memory goes out of scope, Rust automatically generates the deallocation instructions during compilation:
+
+```rust
+fn process() {
+    let mut data = String::from("Buffer"); // Allocated on the heap
+    data.push_str(" data");
+    println!("{}", data);
+} // <-- 'data' goes out of scope here.
+  // The compiler automatically inserts the free/drop command here.
 ```
 
-*   **`./`**: Tells the shell to look in the current folder, rather than the global system paths.
-*   **`target/debug/`**: The default build output folder profile (Debug Mode).
-*   **`hello_ckb`**: The name of the binary executable (matches the name in `Cargo.toml`).
+### Scenarios where Rust CAN leak memory:
+While Rust prevents accidental leaks, there are specific patterns where leaks can still happen:
 
-*Note:* If you compile for production with optimizations enabled (`cargo build --release`), the executable goes to the release folder instead:
-```bash
-./target/release/hello_ckb
-```
+1.  **Reference Cycles:** If you use Reference Counting smart pointers (`Rc` or `Arc`) and configure them to point to each other (e.g. Node A references Node B, and Node B references Node A), their reference counters will never reach zero. Consequently, Rust will never drop them from memory.
+2.  **Explicit Leaks (`Box::leak`):** Rust provides explicit APIs to intentionally leak memory. This is sometimes used in embedded systems to allocate a runtime configuration buffer once at startup and convert it into a static reference (`&'static mut`) that lives for the entire power cycle.
+3.  **Unbounded Growth:** Continuously pushing items to a global database, vector, or cache without clearing it will grow heap consumption until the system runs out of memory (OOM).
+
 
 ### What is a "Manifest"?
 *   **In Programming:** A manifest is a configuration file (like `Cargo.toml`) that serves as the project's official registry. It tells the compiler who wrote the project, what external libraries it requires (its "cargo"), and how to compile it.
