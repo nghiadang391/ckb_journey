@@ -1,0 +1,172 @@
+=========================================
+1. Compilation: make clean && make build
+=========================================
+nghiadang@Nghias-MacBook-Pro 13_xudt_extensions % make clean
+rm -rf build target Cargo.lock
+
+nghiadang@Nghias-MacBook-Pro 13_xudt_extensions % make build
+mkdir -p build/release
+env CC_riscv64imac-unknown-none-elf=riscv64-elf-gcc RUSTFLAGS="-C target-feature=+zba,+zbb,+zbc,+zbs,-a" cargo build --target riscv64imac-unknown-none-elf --release
+    Updating crates.io index
+     Locking 80 packages to latest compatible versions
+      Adding ckb-gen-types v0.119.0 (available: v1.1.1)
+      Adding ckb-std v0.16.4 (available: v1.1.0)
+   Compiling shlex v2.0.1
+   Compiling find-msvc-tools v0.1.9
+   Compiling cfg-if v1.0.4
+   Compiling blake2b-ref v0.3.1
+   Compiling bytes v1.11.1 (/Users/nghiadang/CKB/ckb_journey/projects/13_xudt_extensions/bytes-patch)
+   Compiling buddy-alloc v0.6.0
+   Compiling gcd v2.3.0
+   Compiling cc v1.2.64
+   Compiling ckb-hash v0.119.0
+warning: methods `store`, `compare_exchange_weak`, and `swap` are never used
+  --> bytes-patch/src/loom.rs:18:27
+   |
+11 | ...   impl AtomicUsize {
+   |       ---------------- methods in this implementation
+...
+18 | ...       pub(crate) fn store(&self, val: usize, _order: Ordering) {
+   |                         ^^^^^
+...
+46 | ...       pub(crate) fn compare_exchange_weak(&self, current: usize, new: usize, success: Ordering, failure: Ordering) -> Result<usi...
+   |                         ^^^^^^^^^^^^^^^^^^^^^
+...
+49 | ...       pub(crate) fn swap(&self, val: usize, _order: Ordering) -> usize {
+   |                         ^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: methods `store` and `swap` are never used
+  --> bytes-patch/src/loom.rs:72:27
+   |
+65 |         impl<T> AtomicPtr<T> {
+   |         -------------------- methods in this implementation
+...
+72 |             pub(crate) fn store(&self, val: *mut T, _order: Ordering) {
+   |                           ^^^^^
+...
+75 |             pub(crate) fn swap(&self, val: *mut T, _order: Ordering) -> *mut T {
+   |                           ^^^^
+
+   Compiling molecule v0.8.0
+   Compiling ckb-gen-types v0.119.0
+warning: `bytes` (lib) generated 2 warnings
+   Compiling ckb-std v0.16.4
+   Compiling pause-extension v0.1.0 (/Users/nghiadang/CKB/ckb_journey/projects/13_xudt_extensions/contracts/pause-extension)
+warning: unused import: `alloc::vec::Vec`
+ --> contracts/pause-extension/src/main.rs:7:5
+  |
+7 | use alloc::vec::Vec;
+  |     ^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `pause-extension` (bin "pause-extension") generated 1 warning (run `cargo fix --bin "pause-extension" -p pause-extension` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 12.38s
+cp target/riscv64imac-unknown-none-elf/release/pause-extension build/release/pause-extension
+
+=========================================
+2. Verification Tests: npm test
+=========================================
+nghiadang@Nghias-MacBook-Pro 13_xudt_extensions % npm test
+
+> xudt-extension-tests@1.0.0 test
+> NODE_OPTIONS='--no-warnings' jest --maxWorkers=1
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input lock script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 539
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input type script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 113404(110.7K)
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input lock script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 539
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input type script
+    ║ Index: 0
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 13569(13.3K)
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+  console.log
+    
+    ╔════════════════════════════════════════════════════════
+    ║ Script Verification Summary
+    ║ Type: input lock script
+    ║ Index: 1
+    ╠════════════════════════════════════════════════════════
+    ║ STDOUT:
+    ║ Run result: 0
+    ║ All cycles: 539
+    ╠════════════════════════════════════════════════════════
+    ║ STDERR:
+    ║ 
+    ╚════════════════════════════════════════════════════════
+
+      at ScriptVerificationResult.reportSummary (node_modules/ckb-testtool/dist.commonjs/unittest/core.js:106:17)
+
+PASS src/extension.test.ts
+  xUDT Pause Extension Script Tests
+    ✓ Scenario 1: Token is not paused (active) -> verification succeeds (54 ms)
+    ✓ Scenario 2: Token is paused -> verification fails with exit code 88 (33 ms)
+    ✓ Scenario 3: Token is paused but owner is present -> verification succeeds (override) (39 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        1.026 s
+Ran all test suites.

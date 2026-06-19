@@ -1,0 +1,13 @@
+[package]
+name = "ssri-sudt"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ckb-std = { version = "0.16.4", features = ["dummy-atomic"] }
+ckb-ssri-std = "0.0.1"
+ckb-gen-types = { version = "0.119.0", default-features = false }
+
+[features]
+library = []
+native-simulator = ["library", "ckb-std/native-simulator"]

@@ -1,0 +1,62 @@
+=========================================
+1. Compilation: make clean && make build
+=========================================
+nghiadang@Nghias-MacBook-Pro 12_ssri_sudt % make clean
+rm -rf build target Cargo.lock
+
+nghiadang@Nghias-MacBook-Pro 12_ssri_sudt % make build
+mkdir -p build/release
+env CC_riscv64imac-unknown-none-elf=riscv64-elf-gcc RUSTFLAGS="-C target-feature=+zba,+zbb,+zbc,+zbs,-a" cargo build --target riscv64imac-unknown-none-elf --release
+warning: methods `store`, `compare_exchange_weak`, and `swap` are never used
+  --> bytes-patch/src/loom.rs:18:27
+   |
+11 | ...   impl AtomicUsize {
+   |       ---------------- methods in this implementation
+...
+18 | ...       pub(crate) fn store(&self, val: usize, _order: Ordering) {
+   |                         ^^^^^
+...
+46 | ...       pub(crate) fn compare_exchange_weak(&self, current: usize, new: usiz...
+   |                         ^^^^^^^^^^^^^^^^^^^^^
+...
+49 | ...       pub(crate) fn swap(&self, val: usize, _order: Ordering) -> usize {
+   |                         ^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: methods `store` and `swap` are never used
+  --> bytes-patch/src/loom.rs:72:27
+   |
+65 |         impl<T> AtomicPtr<T> {
+   |         -------------------- methods in this implementation
+...
+72 |             pub(crate) fn store(&self, val: *mut T, _order: Ordering) {
+   |                           ^^^^^
+...
+75 |             pub(crate) fn swap(&self, val: *mut T, _order: Ordering) -> *mut T {
+   |                           ^^^^
+
+warning: `bytes` (lib) generated 2 warnings
+   Compiling ssri-sudt v0.1.0 (/Users/nghiadang/CKB/ckb_journey/projects/12_ssri_sudt/contracts/ssri-sudt)
+    Finished `release` profile [optimized] target(s) in 0.25s
+cp target/riscv64imac-unknown-none-elf/release/ssri-sudt build/release/ssri-sudt
+
+=========================================
+2. Verification Tests: npm test
+=========================================
+nghiadang@Nghias-MacBook-Pro 12_ssri_sudt % npm test
+
+> rust-sudt-tests@1.0.0 test
+> NODE_OPTIONS='--no-warnings' jest --maxWorkers=1
+
+PASS src/sudt.test.ts
+  sUDT On-Chain Rust Script Tests
+    ✓ sudt-simple transfer success (inputs 100 >= outputs 90) (61 ms)
+    ✓ sudt transfer failed (inflation: inputs 100 < outputs 110) (35 ms)
+    ✓ sudt owner mode (bypass balance check: outputs 500 > inputs 100) (39 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        1.052 s
+Ran all test suites.

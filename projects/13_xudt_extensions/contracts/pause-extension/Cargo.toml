@@ -1,0 +1,12 @@
+[package]
+name = "pause-extension"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ckb-std = { version = "0.16.4", features = ["dummy-atomic"] }
+ckb-gen-types = { version = "0.119.0", default-features = false }
+
+[features]
+library = []
+native-simulator = ["library", "ckb-std/native-simulator"]
