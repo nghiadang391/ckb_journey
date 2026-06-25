@@ -11,7 +11,7 @@
 | **Intro** | Done | CKB concepts, OffCKB setup, CKB Academy Lessons 1 & 2 |
 | **Beginner** | Done | Transfer CKB, Store Data on Cell, Fungible Tokens (xUDT), Simple Lock |
 | **Intermediate** | Done | Molecule Serialization, Spore DOBs, JS-VM scripts, Rust sUDT contracts |
-| **Advanced** | In Progress | SSRI protocol (Done), xUDT Extensions (Done), iCKB, RGB++ |
+| **Advanced** | In Progress | SSRI protocol (Done), xUDT Extensions (Done), iCKB (Done), RGB++ |
 
 ---
 
@@ -76,7 +76,8 @@ CKB/
 │       ├── 10_rust_sudt_script/  # Lesson 10: On-Chain Rust sUDT contract (RISC-V)
 │       ├── 11_nervos_dao/        # Lesson 11: Nervos DAO interaction (Deposit/Prepare/Claim)
 │       ├── 12_ssri_sudt/         # Lesson 12: SSRI-compliant UDT contract in Rust
-│       └── 13_xudt_extensions/   # Lesson 13: xUDT pausable extension contract in Rust
+│       ├── 13_xudt_extensions/   # Lesson 13: xUDT pausable extension contract in Rust
+│       └── 14_ickb/              # Lesson 14: iCKB liquid staking transaction simulation
 ```
 
 ---
