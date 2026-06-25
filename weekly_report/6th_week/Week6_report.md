@@ -16,7 +16,7 @@
 
 #### 1. Direct Staking (Nervos DAO) vs. Liquid Staking (iCKB)
 * **Direct Staking (Illiquid):** Locks your CKB directly into the Nervos DAO for 30-day (180-epoch) cycles to earn inflation protection against state rent. Your funds are physically frozen; you cannot trade or spend them if you need emergency cash.
-* **Liquid Staking (iCKB):** Keeps your underlying CKB locked inside the Nervos DAO (preserving inflation rewards) but hands you a **liquid ticket** (the iCKB token). Since iCKB is a standard fungible token, you can trade it, sell it, or use it in DeFi immediately, giving you the best of both worlds: network security for CKB and spending freedom for the user.
+* **Liquid Staking (iCKB):** Keeps your underlying CKB locked inside the Nervos DAO (preserving inflation rewards) but hands you a **liquid Gold Warehouse Receipt** (the iCKB token), similar to how early paper money was backed 100% by physical gold locked in a vault. You can trade or sell this receipt immediately in the market for liquidity, while the real asset remains safely locked to secure the network.
 
 #### 2. The CCC SDK's Silent Fallback Behavior
 * **The Discovery:** We noticed that when our local `offckb node` was offline, the script still successfully executed and returned a massive block height (`#21539263`). 

@@ -2,10 +2,12 @@
 
 This plan outlines the steps to implement a TypeScript simulation script representing the **iCKB Protocol** (liquid staking wrapper for the Nervos DAO). We will build transaction constructors using the **CCC SDK** to simulate depositing CKB, minting liquid iCKB tokens, and redeeming iCKB tokens for the underlying CKB plus interest.
 
-## Real-Life Analogy: The Liquid Coat-Check Ticket
-Imagine you go to a theater and want to check your heavy winter coat (your CKB tokens) into the theater's cloakroom (staked in the Nervos DAO) to earn a premium reward for keeping it there. The cloakroom locks your coat in a vault. Because the coat is locked, you can't wear it, trade it, or use it for the next few weeks (Nervos DAO's 30-day/180-epoch maturity cycle).
+## Real-Life Analogy: The Gold Warehouse Receipt (Paper Gold Certificate)
+Imagine you own heavy physical gold bars (your CKB tokens) and want to secure them in a high-security bank vault (the Nervos DAO) to keep them safe and earn an inflation-protection rebate. Once the gold is locked in the vault, it is completely frozen—you cannot easily carry it around to buy groceries, trade, or invest. It is completely **illiquid**.
 
-To solve this, the theater issues you a special **liquid coat-check ticket** (the iCKB token). This ticket guarantees that whoever holds it can redeem it for a coat from the vault. Furthermore, the ticket's face value dynamically increases over time to reflect the accrued staking rewards (interest). Instead of waiting out the maturity cycle, you can sell or trade this ticket (iCKB) to anyone else in the theater immediately. When the buyer is ready, they can go to the vault, present the ticket, and redeem the coat plus the accrued interest.
+To solve this, the vault manager issues you a paper **Gold Warehouse Receipt** (similar to how early paper money was backed by gold). This paper receipt is lightweight, highly standardized, and legally represents your ownership of the gold locked in the vault. 
+
+Instead of carrying physical gold, you can trade, sell, or buy goods using this paper receipt (the iCKB token) because others know it is 100% backed by real gold in the vault. As the gold in the vault earns compounding interest, the paper receipt's redemption value automatically increases. If you need cash, you can sell the receipt to another buyer instantly. Whoever holds the paper receipt can walk up to the vault at any time, hand it in, and immediately withdraw the physical gold.
 
 ---
 
