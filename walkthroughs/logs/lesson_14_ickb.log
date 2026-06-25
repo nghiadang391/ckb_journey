@@ -1,0 +1,63 @@
+> ickb-simulation@1.0.0 start
+> tsx src/index.ts
+
+==============================================================================
+=== STARTING LESSON 14: iCKB Liquid Staking Protocol Simulation ===
+==============================================================================
+[START] Phase 1: Network Connection and AR Detection...
+[INFO] Connection Status: Connected to Public CKB Testnet (via CCC Silent Fallback)
+[INFO] Current Tip Block: #21539385
+[INFO] Live DAO Accumulator detected from Block Header.
+[INFO] Base Deposit Accumulated Rate (AR_deposit): 11855851438230067
+
+==============================================================================
+[START] Phase 2: Simulating CKB Deposit & iCKB Token Minting...
+==============================================================================
+[INPUT] CKB to lock in pool:      500 CKB
+[MATH] iCKB Minting Formula:     iCKB = CKB_deposited / AR_deposit
+[MATH] Calculation:              50000000000 / 1185585143823006700000000
+[OUTPUT] Liquid iCKB to Mint:    0.00000421 CKB (represented as xUDT)
+
+[INFO] Assembling Deposit & Mint Transaction Skeleton...
+   --- TX Telemetry Frame ---
+   Output 0 (DAO Deposit):
+     Lock Script (Owner):  iCKB_Logic_Script (0x1111...)
+     Type Script (Asset):  NervosDAO_System_Script
+     Capacity:             500 CKB
+     Data:                 0x0000000000000000
+   Output 1 (Liquid iCKB):
+     Lock Script (Owner):  User_Address_Lock
+     Type Script (Asset):  iCKB_xUDT_Token_Script
+     Capacity:             146 CKB
+     Data (iCKB Balance):  0xa5010000000000000000000000000000 (0.00000421 CKB)
+   --------------------------
+[SUCCESS] Phase 2 Simulation Completed: CKB locked and liquid iCKB minted.
+
+==============================================================================
+[START] Phase 3: Simulating iCKB Token Burn & CKB Redemption...
+==============================================================================
+[INFO] Simulating time progression (epochs passed).
+[INFO] Current Withdraw Accumulated Rate (AR_withdraw): 108500000
+
+[INPUT] Burning iCKB tokens:      0.00000421 CKB
+[MATH] CKB Redemption Formula:  CKB_returned = iCKB_burned * AR_withdraw
+[MATH] Calculation:             421 * 108500000
+[OUTPUT] Principal CKB:         500 CKB
+[OUTPUT] Earned Interest Yield: 45678499500 CKB
+[OUTPUT] Total CKB Returned:    45678500000 CKB
+
+[INFO] Assembling Burn & Redemption Transaction Skeleton...
+   --- TX Telemetry Frame ---
+   Input 0 (DAO Deposit locked under iCKB Logic):
+     Capacity:             500 CKB
+   Input 1 (Liquid iCKB xUDT being Burned):
+     iCKB Burned:          0.00000421 CKB
+   Output 0 (Redeemed Funds to User):
+     Lock Script (Owner):  User_Address_Lock
+     Capacity (Returned):  45678500000 CKB
+     Data:                 0x (Empty)
+   --------------------------
+[SUCCESS] Phase 3 Simulation Completed: iCKB burned and CKB + interest redeemed.
+==============================================================================
+=== LESSON 14 COMPLETED: Liquid Staking Mechanics Successfully Simulated ===
+==============================================================================

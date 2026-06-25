@@ -120,3 +120,39 @@
     *   accrued interest is computed using DAO arithmetic accumulator ratios (`ar`) stored in block headers.
     *   Maturity lock parameters are hex-encoded into the inputs' `since` field using **180-epoch** cycles.
     *   Files: [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/11_nervos_dao/src/index.ts)
+
+---
+
+## Lesson 12: SSRI-Compliant UDT in Rust
+*   **High-Level Concept:** Implementing the SSRI (Script-Sourced Rich Information) protocol in a native Rust sUDT token contract, allowing off-chain clients to query token metadata dynamically.
+*   **Embedded Rosetta Stone:** **Standardized on-chip diagnostic register query protocol (like Unified Diagnostic Services / UDS over CAN bus).**
+    *   Rather than hardcoding static information in client code, the off-chain system queries the contract dynamically via standard execution arguments (`argv`), returning up-to-date, self-descriptive metadata.
+*   **Key Highlights & Code Assets:**
+    *   Configured the compiler to target bare-metal RISC-V and compile with the `ckb-ssri-std` library.
+    *   Resolved `rust-lld` duplicate linker symbol conflicts by pinning dependencies to `ckb-std v0.16.4`.
+    *   Implemented the SSRI `UDT` trait and verified metadata queries using Jest.
+    *   Files: [Cargo.toml](file:///Users/nghiadang/CKB/ckb_journey/projects/12_ssri_sudt/Cargo.toml) | [contracts/ssri-sudt/src/main.rs](file:///Users/nghiadang/CKB/ckb_journey/projects/12_ssri_sudt/contracts/ssri-sudt/src/main.rs)
+
+---
+
+## Lesson 13: xUDT Extensions (Advanced Patterns)
+*   **High-Level Concept:** Building a custom pausable compliance validation script in Rust chained as an extension to an xUDT token to veto transactions based on global status cells.
+*   **Embedded Rosetta Stone:** **Chaining hardware security policies (like secure boot check sequences or memory protection unit / MPU access guards).**
+    *   The base token contract checks balances (ownership). The extension script acts as an external security guard checking custom rules (such as checking if a pause switch cell is active in the transaction dependency layout) and can veto the transaction before completion.
+*   **Key Highlights & Code Assets:**
+    *   Implemented active, paused, and owner override states.
+    *   **Bypass Optimization:** Achieved a **~8.3x cycle reduction** (down to `13,569` cycles) in Owner Mode by immediately exiting when the owner signature is present, bypassing the cell dependency search loops entirely.
+    *   Files: [contracts/pause-extension/src/main.rs](file:///Users/nghiadang/CKB/ckb_journey/projects/13_xudt_extensions/contracts/pause-extension/src/main.rs) | [src/extension.test.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/13_xudt_extensions/src/extension.test.ts)
+
+---
+
+## Lesson 14: iCKB Protocol
+*   **High-Level Concept:** Designing and simulating the iCKB liquid staking protocol, tokenizing locked Nervos DAO deposits into liquid, inflation-protected xUDT tokens.
+*   **Embedded Rosetta Stone:** **DMA Ring Buffering with non-blocking buffer descriptor handles.**
+    *   Direct staking is like a synchronous blocking flash write (freezing CPU resources). iCKB is like a non-blocking DMA ring buffer that handles the slow write in the background and immediately returns a "buffer descriptor" (the iCKB token) that the CPU can pass and use in other tasks immediately.
+*   **Key Highlights & Code Assets:**
+    *   Calculated deposit minting rates and withdrawal redemptions using the deterministic **Accumulated Rate (AR)** compounding formula.
+    *   Constructed valid CKB transaction skeletons for the deposit and burn processes using the CCC SDK.
+    *   Successfully executed the simulation against a live local `offckb` devnet node, extracting real-time block headers.
+    *   Files: [package.json](file:///Users/nghiadang/CKB/ckb_journey/projects/14_ickb/package.json) | [src/index.ts](file:///Users/nghiadang/CKB/ckb_journey/projects/14_ickb/src/index.ts)
+
