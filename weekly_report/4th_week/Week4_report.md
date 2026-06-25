@@ -1,4 +1,4 @@
-## Builder Track Weekly Report — Week 4
+ ## Builder Track Weekly Report — Week 4
 
 **Name:** Vo Duy Tuan Ngoc
 **Week Ending:** 12 June 2026
@@ -19,6 +19,17 @@
 2. **Nervos DAO as an Inflation Shelter:**
    - Long-term CKB holders who are **not** storing data can deposit into the Nervos DAO to receive secondary issuance rewards that exactly offset the inflation rate — preserving their token value.
    - The DAO uses on-chain accumulator ratios (`ar` values in block headers) to compute interest dynamically.
+
+   **Key Features of the Nervos DAO:**
+
+   | Feature | Description |
+   | :--- | :--- |
+   | **Eligibility** | Any holder with a minimum of 102 CKB can deposit into the DAO. |
+   | **Deposit Cycle** | The minimum deposit period is roughly 30 days (one DAO cycle). |
+   | **Withdrawal Process** | Withdrawals can only be made at the end of the current cycle. Early requests stop reward accrual. |
+   | **Interest Type** | The yield is annual, compound, but variable—decreasing as the total CKB supply grows. |
+   | **Security** | Smart contract-based and operates equivalently across all major Nervos wallets. |
+   | **Compound Interest** | Deposits benefit from automatic compounding; there's no need to redeposit rewards. |
 
 3. **DAO Lifecycle Mechanics (3-Step Process):**
    - **Step 1 — Deposit:** Create a cell with `NervosDao` type script and 8 bytes of zeroes as output data.

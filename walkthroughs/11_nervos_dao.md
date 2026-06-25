@@ -8,6 +8,17 @@ Before writing the transaction scripts, it is essential to understand the core c
 
 The **Nervos DAO** is an on-chain smart contract (deployed at genesis) that acts as an **inflation shelter** for CKB token holders. By locking your CKB in the DAO, you receive a share of the CKB inflation, preserving your token value against dilution.
 
+### 🌟 Key Features of the Nervos DAO
+
+| Feature | Description |
+| :--- | :--- |
+| **Eligibility** | Any holder with a minimum of 102 CKB can deposit into the DAO. |
+| **Deposit Cycle** | The minimum deposit period is roughly 30 days (one DAO cycle). |
+| **Withdrawal Process** | Withdrawals can only be made at the end of the current cycle. Early requests stop reward accrual. |
+| **Interest Type** | The yield is annual, compound, but variable—decreasing as the total CKB supply grows. |
+| **Security** | Smart contract-based and operates equivalently across all major Nervos wallets. |
+| **Compound Interest** | Deposits benefit from automatic compounding; there's no need to redeposit rewards. |
+
 ---
 
 ## 2. Why does CKB have inflation (Secondary Issuance)?
