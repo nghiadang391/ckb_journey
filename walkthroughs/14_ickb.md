@@ -46,7 +46,7 @@ The simulation script was executed against a live local `offckb` devnet node. Th
 ### Key Execution Highlights:
 
 1. **Phase 1: Live Node Detection**
-   * Successfully connected to local RPC endpoint `http://127.0.0.1:28114`.
+   * Successfully connected to local RPC endpoint `http://127.0.0.1:28114`. (or connect to public testnet, there's a message printed out to let us know)
    * Detected live tip block: `#21077`.
    * Extracted live Accumulated Rate (AR) from the active block header: `10008059641629868`.
 
