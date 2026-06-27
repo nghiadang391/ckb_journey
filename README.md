@@ -11,7 +11,7 @@
 | **Intro** | Done | CKB concepts, OffCKB setup, CKB Academy Lessons 1 & 2 |
 | **Beginner** | Done | Transfer CKB, Store Data on Cell, Fungible Tokens (xUDT), Simple Lock |
 | **Intermediate** | Done | Molecule Serialization, Spore DOBs, JS-VM scripts, Rust sUDT contracts |
-| **Advanced** | In Progress | SSRI protocol (Done), xUDT Extensions (Done), iCKB (Done), RGB++ |
+| **Advanced** | Done | SSRI protocol (Done), xUDT Extensions (Done), iCKB (Done), RGB++ (Done) |
 
 ---
 
@@ -60,14 +60,17 @@ CKB/
 │   │   ├── 1st_week/
 │   │   ├── 2nd_week/
 │   │   ├── 3rd_week/
-│   │   └── 4th_week/
+│   │   ├── 4th_week/
+│   │   ├── 5th_week/
+│   │   ├── 6th_week/
+│   │   └── 7th_week/
 │   ├── implementation_plans/     # Implementation plan markdown records
 │   ├── walkthroughs/             # Walkthrough guides and transaction logs
 │   │   └── logs/
 │   └── projects/                 # Hands-on dApp and script projects
 │       ├── 02_simple_transfer/   # Lesson 02: Transfer CKB between accounts
 │       ├── 03_store_data_on_cell/ # Lesson 03: Store data on a Cell
-│       ├── 04_fungible_tokens/   # Lesson 04: Create custom xUDT assets
+			├── 04_fungible_tokens/   # Lesson 04: Create custom xUDT assets
 │       ├── 05_simple_lock/       # Lesson 05: Cryptographic custom lock script
 │       ├── 06_molecule_serialization/ # Lesson 06: Molecule codecs and entities
 │       ├── 07_create_spore_dob/  # Lesson 07: Mint Spore digital objects (DOBs)
@@ -77,7 +80,8 @@ CKB/
 │       ├── 11_nervos_dao/        # Lesson 11: Nervos DAO interaction (Deposit/Prepare/Claim)
 │       ├── 12_ssri_sudt/         # Lesson 12: SSRI-compliant UDT contract in Rust
 │       ├── 13_xudt_extensions/   # Lesson 13: xUDT pausable extension contract in Rust
-│       └── 14_ickb/              # Lesson 14: iCKB liquid staking transaction simulation
+│       ├── 14_ickb/              # Lesson 14: iCKB liquid staking transaction simulation
+│       └── 15_rgbpp/             # Lesson 15: RGB++ Protocol isomorphic binding simulation
 ```
 
 ---
