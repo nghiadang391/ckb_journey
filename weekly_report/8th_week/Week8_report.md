@@ -29,9 +29,11 @@
 
 ### Practical Progress & Verification
 
-* **Git Organization:** Created the dedicated `fiber_hackathon/` folder to isolate all hackathon analysis from the core learning tracks. Configured `.gitignore` to prevent tracking files under this folder.
+* **Git Organization:** Created the dedicated `fiber_hackathon/` folder to isolate all hackathon analysis from the core learning tracks. Updated `.gitignore` to track these files in version control.
 * **API Validation:** Inspected the Fiber reference node codebase (`crates/fiber-lib/src/fiber/network.rs` and `crates/fiber-types/src/payment.rs`) to verify the type signatures of `SendPaymentResponse` and trace how error codes flow from internal logic to RPC endpoints.
 * **Project Specifications:** Wrote a comprehensive, plain-text blueprint detailing the **Fiber Route Diagnostics** project in [project_description.md](file:///Users/nghiadang/CKB/ckb_journey/fiber_hackathon/project_description.md).
+* **Local Devnet Success Demo:** Developed and ran [real_fnn_success.js](file:///Users/nghiadang/CKB/ckb_journey/fiber_hackathon/fiber_route_diagnostics/src/real_fnn_success.js) to automate peer connection, L1 channel funding, and a successful **500 CKB** off-chain payment settlement in under 1 second.
+* **Public Testnet Integration:** Upgraded the local FNN binary to `v0.9.0-rc7` for public protocol compatibility. Claimed CKB from the testnet faucet to Account 10 and opened a real channel to the public Nervos bootnode, generating L1 transaction `0xe7f5f98d34cd35a35500f75b192023b33c8e932d4912184ca9026cd4b734f0a1` which is confirmed on the public CKB Testnet Explorer.
 
 ---
 

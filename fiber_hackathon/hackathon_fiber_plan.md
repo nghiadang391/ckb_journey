@@ -1,64 +1,61 @@
-# Hackathon Preparation & Investigation Plan: Fiber Routing Simulator
+# Hackathon Preparation & Investigation Plan: Fiber Route Diagnostics
 
-This plan outlines a structured, 15-day roadmap to participate in the **Fiber Network Infrastructure Hackathon** (July 1 - July 15). 
+This plan outlines a structured, 15-day roadmap to build **Fiber Route Diagnostics** for the **Gone in 60ms: Fiber Network Infrastructure Hackathon** (July 1 - July 15).
 
-Given your background in embedded systems and completion of the CKB Advanced Track, we propose building a **Fiber Payment-Channel & Routing Simulator**. This project fits into **Category 2: Node, Routing, Cross-Chain, and Diagnostics Infrastructure**.
+This project fits into **Category 2: Node, Routing, Cross-Chain, and Diagnostics Infrastructure**.
 
 ---
 
-## Project Goal: Fiber Routing & Diagnostic Simulator
-A tool that allows developers to:
-1. Define a local network topology of Fiber nodes and channels.
-2. Run simulated payments, finding the best route using Dijkstra's algorithm based on fee rates and channel capacities.
-3. Simulate failure states (e.g., node offline, insufficient liquidity, fee mismatch) and print detailed diagnostics.
-4. Visualize the state of the channels (balances, capacities) before and after routing.
-
-*Why this is suitable:* It does not require running heavy node infrastructure on day one. It allows you to learn the exact mathematical and logical rules of Fiber payment channels by coding them, resulting in a highly reusable developer tool.
+## Project Goal: Fiber Route Diagnostics
+A diagnostic middleware, visual dashboard, and client SDK that allows developers to:
+1. **Intercept JSON-RPC responses** from a running Fiber Network Node (FNN) using a transparent local proxy.
+2. **Parse flat error strings** (e.g. `failed_error: Option<String>`) into structured `TlcErr` schemas, capturing exact error codes, failing node IDs, and channel outpoints.
+3. **Persist transaction telemetry** in a local SQLite database for historical diagnostics and peer failure tracking.
+4. **Visualize payment lifecycles and hop statuses** on a single-page web dashboard with failure statistics and heatmaps.
 
 ---
 
 ## 15-Day Roadmap
 
 ### Phase 1: Research & Investigation (Days 1–4)
-* **Objective:** Understand the mechanics of payment channels and HTLCs (Hashed Time-Locked Contracts).
+* **Objective:** Audit the FNN codebase and map TLC error states.
 * **Tasks:**
-  * Read the [Fiber Network Docs](https://www.fiber.world/docs) and the [Fiber Hackathon Documentation](https://github.com/RetricSu/fiber-hackathon-docs).
-  * Study the lifecycle of a channel: Funding, Commitment Updates, and Closing.
-  * Study HTLCs: How a payment hash and secret preimage are used to route payments across multiple hops securely.
-  * Research routing fee structures: Base Fee (flat fee per payment) + Proportional Fee (fee based on payment size).
+  * Study the reference code in `nervosnetwork/fiber` for payment schemas, specifically `SendPaymentResponse` and `TlcErr` in `crates/fiber-types/src/payment.rs`.
+  * Catalog the flat JSON-RPC error strings returned by FNN and match them to internal `TlcErrorCode` variants.
+  * Define the JSON schemas for the enriched proxy diagnostics.
 
 ### Phase 2: Design & Scaffolding (Days 5–7)
-* **Objective:** Define data structures and initialize the project.
+* **Objective:** Set up the workspace and project files.
 * **Tasks:**
-  * Scaffold a new TypeScript project `projects/hackathon_fiber_simulator/`.
-  * Define data structures:
-    * `Node`: ID, online status.
-    * `Channel`: ID, Node A, Node B, Node A Balance, Node B Balance, Base Fee, Proportional Fee.
-    * `HTLC`: Amount, Payment Hash, Locktime.
-  * Design the routing algorithm (Dijkstra's pathfinding) that takes channel capacities and routing fees into account.
+  * Scaffold a new TypeScript workspace `/Users/nghiadang/CKB/fiber_diagnostics/` containing `package.json`, `tsconfig.json`, and `jest.config.js`.
+  * Set up dependencies (Express, better-sqlite3, ws, ccc, jest).
+  * Design database schemas for SQLite payment history storage.
 
 ### Phase 3: Core Implementation (Days 8–11)
-* **Objective:** Code the payment simulation and state transitions.
+* **Objective:** Implement the proxy server, interceptor, and parser.
 * **Tasks:**
-  * Implement pathfinding: Find the cheapest valid route from Sender to Receiver.
-  * Implement the HTLC lifecycle:
-    * Step 1: Lock HTLCs along the path from Sender to Receiver.
-    * Step 2: The Receiver reveals the secret preimage.
-    * Step 3: Unlock HTLCs and update channel balances in reverse order.
-  * Implement diagnostic checks:
-    * Insufficient capacity at any hop.
-    * Target node offline.
-    * Exceeded maximum locktime.
+  * Write the error parser in `src/proxy/parser.ts` to map error strings to structured objects.
+  * Build the HTTP RPC Proxy Server in `src/proxy/server.ts` to intercept `send_payment` and `get_payment` calls.
+  * Implement the database store in `src/db/store.ts` to log all successful and failed payment sessions.
+  * Write Jest unit tests in `tests/parser.test.ts` to verify parser parsing logic under different mock FNN outputs.
 
-### Phase 4: Interface & Diagnostics (Days 12–13)
-* **Objective:** Build a user interface (CLI or Web) and format outputs.
+### Phase 4: Web Dashboard & SDK (Days 12–13)
+* **Objective:** Build the dashboard interface and the client wrapper SDK.
 * **Tasks:**
-  * Create a CLI or a clean Web interface using Vanilla CSS to visualize the network graph and channel balances.
-  * Output detailed step-by-step transaction telemetry using standard brackets and dividers (matching the style of your CKB journey lessons).
+  * Implement `src/dashboard/` consisting of a static HTML view, styling, and WebSocket listeners to stream real-time payments.
+  * Build a payment timeline feed showing successful, failed, and inflight runs.
+  * Code the lightweight `FiberDiag` SDK client wrapper in `src/sdk/index.ts` to expose clean methods for dApps.
 
 ### Phase 5: Presentation & Submission (Days 14–15)
-* **Objective:** Prepare deliverables.
+* **Objective:** Wrap up and submit the project.
 * **Tasks:**
-  * Record a 5-minute video demonstrating the simulator running different scenarios.
-  * Write the README and technical breakdown explaining the Fiber infrastructure gap addressed.
-  * Submit the project on CKBoost before the July 15 deadline.
+  * Record a 5-minute video demonstrating the proxy server intercepting payments and the dashboard updating in real-time.
+  * Write a detailed technical README explaining the Fiber RPC diagnostic gap addressed.
+  * Submit the repository on CKBoost before the July 15 deadline.
+
+---
+
+## Verification Plan
+1. **Parser Tests:** Verify that raw strings like `"TemporaryChannelFailure"` or `"AmountBelowMinimum"` are correctly mapped to structural categories with suggestions.
+2. **Proxy Forwarding:** Verify that all non-payment JSON-RPC methods are forwarded to FNN completely unmodified.
+3. **Database Logging:** Verify that all processed payments are successfully persisted in SQLite with their full diagnostics payload.
