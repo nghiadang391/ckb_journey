@@ -1,6 +1,7 @@
-# Builder Track Weekly Report — Week 11
+## Builder Track Weekly Report — Week 11
 
-**Contributor:** Vo Duy Tuan Ngoc | **Period Ending:** 31 July 2026
+**Name:** Vo Duy Tuan Ngoc  
+**Week Ending:** 31 July 2026  
 
 ---
 

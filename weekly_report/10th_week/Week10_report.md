@@ -1,6 +1,7 @@
-# Builder Track Weekly Report — Week 10
+## Builder Track Weekly Report — Week 10
 
-**Contributor:** Vo Duy Tuan Ngoc | **Period Ending:** 24 July 2026
+**Name:** Vo Duy Tuan Ngoc  
+**Week Ending:** 24 July 2026  
 
 ---
 
