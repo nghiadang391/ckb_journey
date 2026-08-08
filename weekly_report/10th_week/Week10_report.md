@@ -2,7 +2,7 @@
 
 **Name:** Vo Duy Tuan Ngoc  
 **Week Ending:** 24 July 2026  
-
+ 
 ---
 
 ## Overview
