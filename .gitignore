@@ -7,3 +7,14 @@ target/
 
 # Private AI learning context — not for version control
 Developer_Guidelines.md
+
+# AI Agent configuration files — local tooling only
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.agents/
+.claude/
+.cursor/
+.windsurf/
+implementation_plan.md
+task.md
