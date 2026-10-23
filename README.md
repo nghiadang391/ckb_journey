@@ -12,6 +12,7 @@
 | **Beginner** | Done | Transfer CKB, Store Data on Cell, Fungible Tokens (xUDT), Simple Lock |
 | **Intermediate** | Done | Molecule Serialization, Spore DOBs, JS-VM scripts, Rust sUDT contracts |
 | **Advanced** | Done | SSRI protocol (Done), xUDT Extensions (Done), iCKB (Done), RGB++ (Done) |
+| **Capstone** | Done | **ToyTrade**: 2-of-2 RISC-V Escrow, Spore DOB Passports, Fiber L2, JoyID Passkey |
 
 ---
 
@@ -88,7 +89,18 @@ CKB/
 
 ## Weekly Developer Logs
 
-Weekly logs are maintained in the [`weekly_report/`](./weekly_report/) directory, published every week as required by the CKB Builders' Track.
+Weekly logs are maintained in the [`weekly_report/`](./weekly_report/) directory, published every week as required by the CKB Builders' Track:
+
+| Phase | Weeks | Highlights | Report Links |
+|---|---|---|---|
+| **Foundations** | Weeks 1–7 | CKB Cell model, OffCKB setup, xUDT, and Molecule serialization | [`1st_week`](./weekly_report/1st_week/) – [`7th_week`](./weekly_report/7th_week/) |
+| **Advanced Protocols** | Weeks 8–15 | Rust contracts, SSRI, xUDT extensions, iCKB, and RGB++ binding | [`8th_week`](./weekly_report/8th_week/) – [`15th_week`](./weekly_report/15th_week/) |
+| **Capstone Initiation** | Weeks 16–18 | ToyTrade dApp architecture, 2-of-2 RISC-V escrow lock, JoyID auth | [`16th_week`](./weekly_report/16th_week/) – [`18th_week`](./weekly_report/18th_week/Week18_report.md) |
+| **Fiber L2 Network** | Week 19 | Fiber Network node integration and instant invoice settlement | [`19th_week`](./weekly_report/19th_week/Week19_report.md) |
+| **Spore DOB Passports** | Week 20 | Digital Toy Passport provenance and multi-currency pricing | [`20th_week`](./weekly_report/20th_week/Week20_report.md) |
+| **UX & Reactive State** | Week 21 | Handover role separation, notification engine, <50ms cache, reactive sync | [`21st_week`](./weekly_report/21st_week/Week21_report.md) |
+| **Fallback & Settlement** | Week 22 | Fiber L2 fallback hardening and live on-chain Spore DOB settlement minting | [`22nd_week`](./weekly_report/22nd_week/Week22_report.md) |
+| **Production Resilience**| Week 23 | PR #5 merge, public testnet RPC resilience, and headless Playwright verification | [`23rd_week`](./weekly_report/23rd_week/Week23_report.md) |
 
 ---
 
