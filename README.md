@@ -101,6 +101,7 @@ Weekly logs are maintained in the [`weekly_report/`](./weekly_report/) directory
 | **UX & Reactive State** | Week 21 | Handover role separation, notification engine, <50ms cache, reactive sync | [`21st_week`](./weekly_report/21st_week/Week21_report.md) |
 | **Fallback & Settlement** | Week 22 | Fiber L2 fallback hardening and live on-chain Spore DOB settlement minting | [`22nd_week`](./weekly_report/22nd_week/Week22_report.md) |
 | **Production Resilience**| Week 23 | PR #5 merge, public testnet RPC resilience, and headless Playwright verification | [`23rd_week`](./weekly_report/23rd_week/Week23_report.md) |
+| **x402 Agent Payments** | Week 24 | `x402-facilitator` & `@x402-fiber` SDK (`exact` scheme, `upto` capability math, FNN v0.9.1 spike) | [`24th_week`](./weekly_report/24th_week/Week24_report.md) |
 
 ---
 
