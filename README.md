@@ -102,6 +102,7 @@ Weekly logs are maintained in the [`weekly_report/`](./weekly_report/) directory
 | **Fallback & Settlement** | Week 22 | Fiber L2 fallback hardening and live on-chain Spore DOB settlement minting | [`22nd_week`](./weekly_report/22nd_week/Week22_report.md) |
 | **Production Resilience**| Week 23 | PR #5 merge, public testnet RPC resilience, and headless Playwright verification | [`23rd_week`](./weekly_report/23rd_week/Week23_report.md) |
 | **x402 Agent Payments** | Week 24 | `x402-facilitator` & `@x402-fiber` SDK (`exact` scheme, `upto` capability math, FNN v0.9.1 spike) | [`24th_week`](./weekly_report/24th_week/Week24_report.md) |
+| **CKB Whitehat Security** | Week 25 | `ckb-whitehat` CLI/skill & deterministic security audits of `Dular` (F1–F9, on-chain C4.1–C4.5) and `tapfiber` (S1–S7) | [`25th_week`](./weekly_report/25th_week/Week25_report.md) |
 
 ---
 
